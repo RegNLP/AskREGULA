@@ -1,0 +1,382 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>AskRegula – End User Workspace</title>
+  <link rel="icon" type="image/png" href="../../images/askregulalogominimal2.png" />
+  <link rel="stylesheet" href="../../styles/askregula-end-user-workspace.css" />
+</head>
+<body>
+  <div class="app-shell">
+    <div class="app-frame">
+      <div class="layout">
+        <!-- Left sidebar: workspace documents, history -->
+        <aside class="sidebar" id="leftSidebar">
+          <div class="sidebar-top-row">
+            <button
+              type="button"
+              class="pill sidebar-toggle-btn"
+              id="sidebarToggleBtn"
+              aria-expanded="true"
+              aria-controls="leftSidebar"
+            >
+              <span class="sidebar-toggle-icon sidebar-toggle-icon--expanded" aria-hidden="true">&#x2039;</span>
+              <span class="sidebar-toggle-icon sidebar-toggle-icon--collapsed" aria-hidden="true">&#x203A;</span>
+              <span class="visually-hidden">Toggle sidebar panel</span>
+            </button>
+          </div>
+
+          <section>
+            <details open>
+              <summary class="section-label">Workspace documents</summary>
+              <div class="card card-tight" style="margin-bottom: 10px;">
+                <div class="upload-area">
+                  <div class="upload-row">
+                    <div class="muted">Upload internal policies, compliance memos, transaction reviews, or working files.</div>
+                    <button class="upload-button" type="button">Upload document</button>
+                  </div>
+                  <div class="upload-note">Used only in this workspace &mdash; not added to the governed core corpus.</div>
+                </div>
+              </div>
+              <div class="list-column">
+                <div class="doc-item">
+                  <div class="doc-name">client_onboarding_policy_v3.pdf</div>
+                  <div class="doc-meta">Workspace document &bull; Uploaded by Compliance team</div>
+                </div>
+                <div class="doc-item">
+                  <div class="doc-name">aml_transaction_review_notes.docx</div>
+                  <div class="doc-meta">Workspace document &bull; Enhanced due diligence review</div>
+                </div>
+                <div class="doc-item">
+                  <div class="doc-name">high_risk_jurisdiction_watchlist.xlsx</div>
+                  <div class="doc-meta">Workspace document &bull; Internal risk monitoring</div>
+                </div>
+              </div>
+            </details>
+          </section>
+
+          <section>
+            <details open>
+              <summary class="section-label">History</summary>
+              <div class="list-column">
+                <div class="history-item">
+                  <div class="history-item-header">
+                    <span class="history-item-title">Enhanced due diligence for a high-risk corporate client</span>
+                    <span class="history-item-meta">Today</span>
+                  </div>
+                  <div class="history-item-meta-row">
+                    <span class="history-item-meta">Session &ndash; onboarding review batch 08</span>
+                    <span class="history-status history-status--review">Needs review</span>
+                  </div>
+                </div>
+                <div class="history-item">
+                  <div class="history-item-header">
+                    <span class="history-item-title">Suspicious transaction reporting threshold</span>
+                    <span class="history-item-meta">Yesterday</span>
+                  </div>
+                  <div class="history-item-meta-row">
+                    <span class="history-item-meta">Single query &ndash; AML escalation check</span>
+                    <span class="history-status history-status--ready">Ready</span>
+                  </div>
+                </div>
+                <div class="history-item">
+                  <div class="history-item-header">
+                    <span class="history-item-title">Source of funds evidence for offshore structures</span>
+                    <span class="history-item-meta">This week</span>
+                  </div>
+                  <div class="history-item-meta-row">
+                    <span class="history-item-meta">Session &ndash; periodic KYC remediation</span>
+                    <span class="history-status history-status--ready">Ready</span>
+                  </div>
+                </div>
+              </div>
+            </details>
+          </section>
+        </aside>
+
+        <!-- Main working area -->
+        <main class="main">
+          <div class="workspace-top-row">
+            <div class="qa-logo">
+              <img src="../../images/askregulalogovertical2.png" alt="AskRegula" />
+            </div>
+            <div class="workspace-meta-inline">
+              Approved source version AGR-Fin-v1.3<br />
+              Updated 23/04/2025
+            </div>
+          </div>
+
+          <!-- Question & Answer panel -->
+          <section class="card">
+            <div class="qa-layout">
+              <div class="qa-question-block">
+                <textarea
+                  class="question-input"
+                  placeholder="Example: Is enhanced due diligence required for onboarding a corporate client with beneficial owners in a high-risk jurisdiction under the current AML rules?"
+                ></textarea>
+                <div class="qa-actions-row">
+                  <button type="button" class="btn-primary" id="askButton">Ask</button>
+                </div>
+              </div>
+
+              <div>
+                <div class="answer-box">
+                  <div class="trust-banner" id="trustBanner">
+                    Using 4 linked sources from the approved financial regulatory scope.
+                  </div>
+                  <div class="answer-status-controls">
+                    <span class="answer-status-label">Mark answer as:</span>
+                    <button
+                      type="button"
+                      class="answer-status-chip answer-status-chip--review answer-status-chip--selected"
+                      data-status="review"
+                      aria-pressed="true"
+                    >
+                      Needs review
+                    </button>
+                    <button
+                      type="button"
+                      class="answer-status-chip answer-status-chip--ready"
+                      data-status="ready"
+                      aria-pressed="false"
+                    >
+                      Ready
+                    </button>
+                  </div>
+                  <div class="answer-body">
+                    <p><strong>Summary</strong></p>
+                    <p>
+                      Based on the active regulatory scope and the documents available in this workspace,
+                      enhanced due diligence should be applied before onboarding the client. The combination
+                      of a corporate ownership structure, cross-border exposure, and beneficial ownership linked
+                      to a high-risk jurisdiction increases the AML risk profile and requires additional verification
+                      steps before the relationship can be approved.
+                    </p>
+
+                    <p><strong>Key points for this case</strong></p>
+                    <ul>
+                      <li>
+                        The AML rulebook requires firms to apply enhanced due diligence where a customer or beneficial owner
+                        is connected to a high-risk jurisdiction
+                        <a href="#source-s1" class="evidence-ref evidence-ref-link" data-target-id="source-s1">[S1 | Core regulatory source]</a>.
+                      </li>
+                      <li>
+                        The client onboarding rules require identification and verification of beneficial owners, including
+                        escalation where ownership structures are complex or opaque
+                        <a href="#source-s2" class="evidence-ref evidence-ref-link" data-target-id="source-s2">[S2 | Core regulatory source]</a>.
+                      </li>
+                      <li>
+                        Workspace review notes indicate that the current file does not yet contain sufficient source-of-funds
+                        evidence for one of the controlling shareholders
+                        <a href="#source-s3" class="evidence-ref evidence-ref-link" data-target-id="source-s3">[S3 | Workspace document]</a>.
+                      </li>
+                      <li>
+                        Internal onboarding policy requires compliance sign-off before approval where enhanced due diligence
+                        conditions are triggered
+                        <a href="#source-s4" class="evidence-ref evidence-ref-link" data-target-id="source-s4">[S4 | Workspace document]</a>.
+                      </li>
+                    </ul>
+
+                    <p><strong>Operational guidance</strong></p>
+                    <ul>
+                      <li>The client should not be approved for onboarding until enhanced due diligence has been completed and documented.</li>
+                      <li>Obtain additional source-of-funds and source-of-wealth evidence for the relevant beneficial owner.</li>
+                      <li>Escalate the file to Compliance for review and approval before account opening.</li>
+                    </ul>
+                  </div>
+                  <div class="answer-footnote">
+                    This answer is evidence-grounded but is not a legal opinion. Please confirm with internal
+                    legal or compliance teams before approving onboarding or client-related decisions.
+                  </div>
+                </div>
+              </div>
+            </div>
+          </section>
+        </main>
+
+        <!-- Right panel: evidence and traceability -->
+        <aside class="rightbar" id="rightSidebar">
+          <div class="rightbar-top-row">
+            <button
+              type="button"
+              class="pill sidebar-toggle-btn rightbar-toggle-btn"
+              id="rightbarToggleBtn"
+              aria-expanded="true"
+              aria-controls="rightSidebar"
+            >
+              <span class="rightbar-toggle-icon rightbar-toggle-icon--expanded" aria-hidden="true">&#x203A;</span>
+              <span class="rightbar-toggle-icon rightbar-toggle-icon--collapsed" aria-hidden="true">&#x2039;</span>
+              <span class="visually-hidden">Toggle supporting sources panel</span>
+            </button>
+          </div>
+
+          <section>
+            <details open>
+              <summary class="section-label">Supporting sources</summary>
+              <div class="card card-tight">
+                <div class="evidence-stack">
+                  <div class="evidence-card" id="source-s1">
+                    <div class="evidence-top-row">
+                      <div class="evidence-title">S1. AML Rulebook &ndash; Enhanced Due Diligence for High-Risk Jurisdictions</div>
+                      <div class="evidence-type-label">Core regulatory source</div>
+                    </div>
+                    <div class="evidence-snippet">
+                      Requires enhanced due diligence where a customer, transaction, or beneficial owner is linked
+                      to a jurisdiction classified as high risk for money laundering or terrorist financing.
+                    </div>
+                    <div class="evidence-ref">Supports the requirement to apply enhanced due diligence in this case.</div>
+                    <div style="margin-top: 6px;">
+                      <button type="button" class="evidence-more-button">More</button>
+                    </div>
+                  </div>
+
+                  <div class="evidence-card" id="source-s2">
+                    <div class="evidence-top-row">
+                      <div class="evidence-title">S2. Client Onboarding Rules &ndash; Beneficial Ownership Verification</div>
+                      <div class="evidence-type-label">Core regulatory source</div>
+                    </div>
+                    <div class="evidence-snippet">
+                      Requires firms to identify and verify beneficial owners and to escalate cases involving complex
+                      or non-transparent ownership arrangements.
+                    </div>
+                    <div class="evidence-ref">Supports the beneficial ownership verification requirement.</div>
+                    <div style="margin-top: 6px;">
+                      <button type="button" class="evidence-more-button">More</button>
+                    </div>
+                  </div>
+
+                  <div class="evidence-card" id="source-s3">
+                    <div class="evidence-top-row">
+                      <div class="evidence-title">S3. AML Transaction Review Notes &ndash; Source of Funds Gap</div>
+                      <div class="evidence-type-label">Workspace document</div>
+                    </div>
+                    <div class="evidence-snippet">
+                      Internal review notes indicate that the onboarding pack does not yet contain adequate supporting
+                      evidence for source of funds relating to one of the controlling shareholders.
+                    </div>
+                    <div class="evidence-ref">Supports the conclusion that the file is not yet complete.</div>
+                    <div style="margin-top: 6px;">
+                      <button type="button" class="evidence-more-button">More</button>
+                    </div>
+                  </div>
+
+                  <div class="evidence-card" id="source-s4">
+                    <div class="evidence-top-row">
+                      <div class="evidence-title">S4. Internal Onboarding Policy &ndash; Compliance Escalation Requirement</div>
+                      <div class="evidence-type-label">Workspace document</div>
+                    </div>
+                    <div class="evidence-snippet">
+                      Requires Compliance approval before onboarding any client where enhanced due diligence measures
+                      have been triggered or where risk indicators remain unresolved.
+                    </div>
+                    <div class="evidence-ref">Supports the recommendation to escalate the file before approval.</div>
+                    <div style="margin-top: 6px;">
+                      <button type="button" class="evidence-more-button">More</button>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </details>
+          </section>
+        </aside>
+      </div>
+
+      <!-- Advisory footer -->
+      <div class="advisory-footer-shell">
+        <div class="advisory-footer">
+          AskRegula provides evidence-grounded regulatory assistance, but outputs should be reviewed by qualified professionals before being used for legal, compliance, or operational decisions.
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <script>
+    (function () {
+      const appFrame = document.querySelector('.app-frame');
+      const sidebarToggleBtn = document.getElementById('sidebarToggleBtn');
+      const rightbarToggleBtn = document.getElementById('rightbarToggleBtn');
+      const askButton = document.getElementById('askButton');
+      const trustBanner = document.getElementById('trustBanner');
+      const answerStatusChips = document.querySelectorAll('.answer-status-chip');
+      const evidenceRefLinks = document.querySelectorAll('.evidence-ref-link');
+
+      if (!appFrame || !sidebarToggleBtn) {
+        return;
+      }
+
+      sidebarToggleBtn.addEventListener('click', function () {
+        const isCollapsed = appFrame.classList.toggle('sidebar-collapsed');
+        sidebarToggleBtn.setAttribute('aria-expanded', String(!isCollapsed));
+      });
+
+      if (rightbarToggleBtn) {
+        rightbarToggleBtn.addEventListener('click', function () {
+          const isCollapsed = appFrame.classList.toggle('rightbar-collapsed');
+          rightbarToggleBtn.setAttribute('aria-expanded', String(!isCollapsed));
+        });
+      }
+
+      if (askButton && trustBanner) {
+        const defaultText = 'Using 4 linked sources from the approved financial regulatory scope.';
+
+        askButton.addEventListener('click', function () {
+          trustBanner.textContent = 'Checking workspace sources and mapping supporting evidence…';
+          trustBanner.classList.add('trust-banner--loading');
+
+          window.setTimeout(function () {
+            trustBanner.textContent = defaultText;
+            trustBanner.classList.remove('trust-banner--loading');
+          }, 1200);
+        });
+      }
+
+      if (answerStatusChips && answerStatusChips.length) {
+        answerStatusChips.forEach(function (chip) {
+          chip.addEventListener('click', function () {
+            answerStatusChips.forEach(function (c) {
+              c.classList.remove('answer-status-chip--selected');
+              c.setAttribute('aria-pressed', 'false');
+            });
+
+            chip.classList.add('answer-status-chip--selected');
+            chip.setAttribute('aria-pressed', 'true');
+          });
+        });
+      }
+
+      if (evidenceRefLinks && evidenceRefLinks.length) {
+        evidenceRefLinks.forEach(function (link) {
+          link.addEventListener('click', function (evt) {
+            evt.preventDefault();
+
+            const targetId = link.getAttribute('data-target-id');
+            if (!targetId) return;
+
+            if (appFrame && appFrame.classList.contains('rightbar-collapsed')) {
+              appFrame.classList.remove('rightbar-collapsed');
+              if (rightbarToggleBtn) {
+                rightbarToggleBtn.setAttribute('aria-expanded', 'true');
+              }
+            }
+
+            const card = document.getElementById(targetId);
+            if (!card) return;
+
+            document.querySelectorAll('.evidence-card--highlight').forEach(function (c) {
+              c.classList.remove('evidence-card--highlight');
+            });
+
+            card.classList.add('evidence-card--highlight');
+            card.scrollIntoView({ behavior: 'smooth', block: 'nearest', inline: 'nearest' });
+
+            window.setTimeout(function () {
+              card.classList.remove('evidence-card--highlight');
+            }, 1500);
+          });
+        });
+      }
+    })();
+  </script>
+</body>
+</html>

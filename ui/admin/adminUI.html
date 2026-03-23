@@ -1,0 +1,1951 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>AskRegula – Admin Console</title>
+  <link rel="icon" type="image/png" href="../../images/askregulalogominimal2.png" />
+  <link rel="stylesheet" href="../../styles/admin-console.css" />
+</head>
+<body>
+  <div class="admin-app">
+    <section class="summary-strip" aria-label="Administration summary">
+      <div class="summary-top">
+        <div class="brand">
+          <img class="brand-logo" src="../../images/askregulalogosmall.png" alt="AskRegula" />
+          <div class="brand-copy">
+            <h1 class="brand-title">Admin Console</h1>
+          </div>
+        </div>
+        <div class="user-meta">
+          <span class="user-pill" title="Admin user">compliance-admin01</span>
+        </div>
+      </div>
+      <div class="summary-grid">
+        <div class="summary-card" id="summary-card-active" data-active-since="2026-03-12">
+          <div class="summary-label">Active Release</div>
+          <div class="summary-value" id="summary-active-version">AGR-FIN-v1.3</div>
+          <div class="summary-meta" id="summary-active-days">—</div>
+        </div>
+        <div class="summary-card" id="summary-card-docs">
+          <div class="summary-label">Reference Documents</div>
+          <div class="summary-value">Approved: <span id="summary-docs-approved">—</span></div>
+          <div class="summary-meta">Pending: <span id="summary-docs-pending">—</span></div>
+        </div>
+        <div class="summary-card" id="summary-card-benchmark" data-benchmark-id="BM-240322-07">
+          <div class="summary-label">Benchmark</div>
+          <div class="summary-value" id="summary-benchmark-label">BM-240322-07</div>
+          <div class="summary-meta" id="summary-benchmark-meta"></div>
+        </div>
+        <div class="summary-card" id="summary-card-pipeline">
+          <div class="summary-label">Pipeline Version</div>
+          <div class="summary-value" id="summary-pipeline-version">PIPE-RAG-v1.3</div>
+          <div class="summary-meta" id="summary-pipeline-meta"></div>
+        </div>
+      </div>
+    </section>
+
+        <div class="main-layout">
+          <main class="main-content" id="mainContent" tabindex="-1">
+            <nav class="tabs" aria-label="Administration areas" role="tablist">
+              <button class="tab is-active" id="tab-corpus" role="tab" aria-selected="true" aria-controls="panel-corpus">Reference Documents</button>
+              <button class="tab" id="tab-benchmark" role="tab" aria-selected="false" aria-controls="panel-benchmark">Benchmark &amp; Generation</button>
+              <button class="tab" id="tab-runs" role="tab" aria-selected="false" aria-controls="panel-runs">Pipeline &amp; Evaluation</button>
+              <button class="tab" id="tab-versions" role="tab" aria-selected="false" aria-controls="panel-versions">Versions &amp; Release</button>
+            </nav>
+
+        <section class="tab-panel is-active" id="panel-corpus" role="tabpanel" aria-labelledby="tab-corpus">
+<div class="panel-section">
+  <section class="card">
+    <div class="card-header">
+      <h3 class="card-title">Reference Documents Overview</h3>
+    </div>
+    <div class="metric-grid">
+      <div class="metric-card">
+        <div class="metric-value">12</div>
+        <div class="metric-label">Active Documents</div>
+      </div>
+      <div class="metric-card">
+        <div class="metric-value">1</div>
+        <div class="metric-label">Pending Addition</div>
+      </div>
+      <div class="metric-card">
+        <div class="metric-value">1</div>
+        <div class="metric-label">Pending Update</div>
+      </div>
+      <div class="metric-card">
+        <div class="metric-value">1</div>
+        <div class="metric-label">Archived Document</div>
+      </div>
+    </div>
+  </section>
+
+  <section class="card">
+    <div class="card-header">
+      <h2 class="card-title">Approved Reference Documents</h2>
+      <p class="card-subtitle">Reference documents currently approved for use in production releases.</p>
+    </div>
+    <div class="table-scroll table-scroll-y">
+      <table class="data-table">
+        <thead>
+          <tr>
+            <th>Document name</th>
+            <th>Document type</th>
+            <th>Version</th>
+            <th>Status</th>
+            <th>Last approved update</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr><td>FSRA AML Rulebook</td><td>Regulation</td><td>v2026.02</td><td><span class="status status--active">Active</span></td><td>04 Feb 2026</td></tr>
+          <tr><td>GEN Rulebook</td><td>Regulation</td><td>v2025.11</td><td><span class="status status--active">Active</span></td><td>12 Nov 2025</td></tr>
+          <tr><td>Client Assets Sourcebook</td><td>Sourcebook</td><td>v2025.09</td><td><span class="status status--active">Active</span></td><td>09 Sep 2025</td></tr>
+          <tr><td>Virtual Asset Guidance</td><td>Guidance</td><td>v2025.12</td><td><span class="status status--active">Active</span></td><td>17 Dec 2025</td></tr>
+          <tr><td>Consumer Protection Standards</td><td>Guidance</td><td>v2025.10</td><td><span class="status status--active">Active</span></td><td>06 Oct 2025</td></tr>
+          <tr><td>Sanctions Screening Standard</td><td>Standard</td><td>v2026.01</td><td><span class="status status--active">Active</span></td><td>21 Jan 2026</td></tr>
+          <tr><td>Customer Due Diligence Manual</td><td>Manual</td><td>v2025.08</td><td><span class="status status--active">Active</span></td><td>28 Aug 2025</td></tr>
+          <tr><td>Transaction Monitoring Playbook</td><td>Playbook</td><td>v2026.02</td><td><span class="status status--active">Active</span></td><td>15 Feb 2026</td></tr>
+          <tr><td>Suspicious Activity Reporting Guide</td><td>Guide</td><td>v2025.07</td><td><span class="status status--active">Active</span></td><td>19 Jul 2025</td></tr>
+          <tr><td>Retail Conduct Rulebook</td><td>Regulation</td><td>v2025.12</td><td><span class="status status--active">Active</span></td><td>04 Dec 2025</td></tr>
+          <tr><td>Licensing Procedures Handbook</td><td>Handbook</td><td>v2025.06</td><td><span class="status status--active">Active</span></td><td>10 Jun 2025</td></tr>
+          <tr><td>Prudential Reporting Instructions</td><td>Instructions</td><td>v2026.01</td><td><span class="status status--active">Active</span></td><td>30 Jan 2026</td></tr>
+          <tr><td>Prudential Returns Manual</td><td>Manual</td><td>v2025.01</td><td><span class="status">Archived</span></td><td>18 Jan 2025</td></tr>
+        </tbody>
+      </table>
+    </div>
+    <div class="actions-row">
+      <button class="btn btn-primary">Add Reference Document</button>
+      <button class="btn">Replace Version</button>
+      <button class="btn">Archive Document</button>
+      <div class="source-set-create">
+        <input id="document-set-version-name" class="input" placeholder="e.g., CORP-FIN-2026-04-CAND" aria-label="Document Set Version Name" />
+        <button class="btn" id="create-document-set-version-btn">Create Document Set Version</button>
+      </div>
+    </div>
+  </section>
+
+  <section class="card">
+    <div class="card-header">
+      <h3 class="card-title">Pending Document Changes</h3>
+      <p class="card-subtitle">Reference document additions and version updates waiting for admin review.</p>
+    </div>
+    <table class="data-table">
+      <thead>
+        <tr>
+          <th>Reference document</th>
+          <th>Change type</th>
+          <th>Proposed version</th>
+          <th>Submitted by</th>
+          <th>Review status</th>
+          <th>Actions</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>Market Conduct FAQ</td>
+          <td>Pending addition</td>
+          <td>v1.0</td>
+          <td>compliance-lead</td>
+          <td><span class="status status--review">Pending approval</span></td>
+          <td><span class="inline-actions"><button class="btn btn-sm">Approve</button><button class="btn btn-sm">Hold</button></span></td>
+        </tr>
+        <tr>
+          <td>FSRA AML Rulebook</td>
+          <td>Pending update</td>
+          <td>v2026.03</td>
+          <td>compliance-lead</td>
+          <td><span class="status status--review">Pending approval</span></td>
+          <td><span class="inline-actions"><button class="btn btn-sm">Approve</button><button class="btn btn-sm">Hold</button></span></td>
+        </tr>
+      </tbody>
+    </table>
+  </section>
+</div>
+
+</section>
+
+        <section class="tab-panel" id="panel-benchmark" role="tabpanel" aria-labelledby="tab-benchmark" hidden>
+<div class="panel-section compact-panel">
+  <!-- Source & Structure -->
+  <section class="card">
+    <div class="card-header card-header-stack">
+      <h2 class="card-title">Source &amp; Structure</h2>
+      <p class="card-subtitle">Select input corpus and structuring for generation.</p>
+    </div>
+    <div class="config-layout">
+      <div class="config-groups">
+        <section class="config-group">
+          <h4 class="config-title">Corpus Selection</h4>
+          <div class="form-grid form-grid-2">
+            <label class="form-row"><span class="label">Input Corpus</span>
+              <select class="select" id="bg-corpus-select">
+                <option selected>Approved Reference Documents</option>
+                <option>Pending Reference Documents</option>
+                <option>Approved + Pending Documents</option>
+                <option>Existing Document Set Version</option>
+              </select>
+            </label>
+            <label class="form-row"><span class="label">Document Set Version</span>
+              <select class="select" id="bg-docset-select">
+                <option selected>CORP-FIN-2026-03</option>
+                <option>CORP-FIN-2026-03-R1</option>
+                <option>CORP-FIN-2026-02</option>
+                <option>Custom Selection</option>
+              </select>
+            </label>
+          </div>
+        </section>
+      </div>
+      <aside class="config-summary">
+        <h4 class="config-title">Structuring</h4>
+        <div class="form-grid form-grid-2">
+          <label class="form-row"><span class="label">Structuring Method</span>
+            <select class="select" id="bg-structuring-method">
+              <option>Passage-based</option>
+              <option>Section-based</option>
+              <option>Cross-reference-aware</option>
+              <option>Schema-guided</option>
+            </select>
+          </label>
+          <label class="form-row"><span class="label">Output Structure</span>
+            <select class="select" id="bg-output-structure">
+              <option>QA Pairs</option>
+              <option>QA + Evidence</option>
+              <option>QA + Evidence + Metadata</option>
+              <option>Structured Benchmark Items</option>
+            </select>
+          </label>
+        </div>
+      </aside>
+    </div>
+  </section>
+
+  <!-- Generation -->
+  <section class="card">
+    <div class="card-header card-header-stack">
+      <h2 class="card-title">Generation</h2>
+      <p class="card-subtitle">Configure LLM, prompts, and generation strategy, then generate draft benchmark items.</p>
+    </div>
+    <div class="config-layout">
+      <div class="config-groups">
+        <section class="config-group">
+          <h4 class="config-title">Model & Settings</h4>
+          <div class="form-grid form-grid-3">
+            <label class="form-row"><span class="label">LLM Model</span>
+              <select class="select" id="bg-llm-select">
+                <option selected>GPT-4.1</option>
+                <option>GPT-4o</option>
+                <option>Claude 3.7 Sonnet</option>
+                <option>Gemini 2.0 Pro</option>
+              </select>
+            </label>
+            <label class="form-row"><span class="label">Generation Strategy</span>
+              <select class="select" id="bg-gen-strategy">
+                <option>Single-pass generation</option>
+                <option>Multi-pass generation</option>
+                <option>Template-guided generation</option>
+                <option>Schema-guided generation</option>
+              </select>
+            </label>
+            <label class="form-row"><span class="label">Question Type Focus</span>
+              <select class="select" id="bg-question-type">
+                <option>General compliance</option>
+                <option>Obligation-focused</option>
+                <option>Procedural</option>
+                <option>Definition-based</option>
+                <option>Cross-reference dependent</option>
+                <option selected>Mixed</option>
+              </select>
+            </label>
+          </div>
+          <div class="form-grid form-grid-3">
+            <label class="form-row"><span class="label">Output Count Mode</span>
+              <select class="select" id="bg-output-count-mode">
+                <option>Fixed number per document</option>
+                <option>Fixed number per topic</option>
+                <option>Fixed total count</option>
+                <option>Adaptive generation</option>
+              </select>
+            </label>
+            <label class="form-row"><span class="label">Target Item Count</span>
+              <input class="input" id="bg-target-count" placeholder="e.g., 500" />
+            </label>
+            <label class="form-row"><span class="label">Temperature / Determinism</span>
+              <input class="input" id="bg-temperature" placeholder="e.g., 0.2 (lower = more deterministic)" />
+            </label>
+          </div>
+        </section>
+      </div>
+      <aside class="config-summary">
+        <h4 class="config-title">Prompt</h4>
+        <div class="form-grid form-grid-1">
+          <label class="form-row"><span class="label">Prompt Version</span>
+            <select class="select" id="bg-prompt-version">
+              <option>Prompt v1 – Basic QA Generation</option>
+              <option>Prompt v2 – Compliance QA</option>
+              <option selected>Prompt v3 – Multi-passage QA</option>
+              <option>Prompt v4 – Cross-reference QA</option>
+              <option>Custom Prompt</option>
+            </select>
+          </label>
+        </div>
+        <div class="form-grid form-grid-1 form-block-gap">
+          <label class="form-row"><span class="label">Prompt Editor</span>
+            <textarea class="textarea" rows="8" id="bg-prompt-editor" placeholder="Write or edit your generation prompt here..."></textarea>
+          </label>
+        </div>
+      </aside>
+    </div>
+    <div class="actions-row form-block-gap">
+      <button class="btn btn-primary btn-sm" id="bg-generate-btn">Generate</button>
+    </div>
+    <div id="bg-generate-feedback" class="muted"></div>
+  </section>
+
+  <!-- Curation -->
+  <section class="card">
+    <div class="card-header card-header-stack">
+      <h2 class="card-title">Curation</h2>
+      <p class="card-subtitle">Apply NLI and IR agreement to curate generated items. Configure structured filtering.</p>
+    </div>
+    <div class="config-layout config-layout-right">
+      <div class="config-groups">
+        <section class="config-group">
+          <h4 class="config-title">Agreement &amp; Models</h4>
+          <div class="form-grid form-grid-2">
+            <label class="form-row"><span class="label">NLI Model</span>
+              <select class="select" id="bg-nli-model">
+                <option>DeBERTa-v3-large MNLI</option>
+                <option selected>Legal DeBERTa NLI</option>
+                <option>RoBERTa-large MNLI</option>
+                <option>Custom NLI Model</option>
+              </select>
+            </label>
+            <label class="form-row"><span class="label">IR Agreement Method Set</span>
+              <select class="select" id="bg-ir-method-set">
+                <option>BM25 + Dense</option>
+                <option selected>BM25 + Dense + Reranker</option>
+                <option>Dense + Reranker</option>
+                <option>Hybrid Full Set</option>
+                <option>Custom IR Set</option>
+              </select>
+            </label>
+            <label class="form-row"><span class="label">IR Agreement Policy</span>
+              <select class="select" id="bg-ir-policy">
+                <option>Keep if supported by at least 1 method</option>
+                <option selected>Keep if supported by at least 2 methods</option>
+                <option>Keep if supported by at least 3 methods</option>
+                <option>Strict majority agreement</option>
+                <option>Full agreement only</option>
+              </select>
+            </label>
+          </div>
+        </section>
+      </div>
+      <aside class="config-summary">
+        <h4 class="config-title">Filtering</h4>
+        <div class="form-grid form-grid-4">
+          <label class="form-row"><span class="label">Duplicate Filtering</span>
+            <select class="select" id="bg-filter-duplicate">
+              <option>Off</option>
+              <option>Exact duplicates only</option>
+              <option selected>Exact + near-duplicate</option>
+              <option>Aggressive deduplication</option>
+            </select>
+          </label>
+          <label class="form-row"><span class="label">Deduplicate By</span>
+            <select class="select" id="bg-filter-dedup-by">
+              <option>Question only</option>
+              <option>Question + Answer</option>
+              <option>Question + Evidence</option>
+              <option>Full item similarity</option>
+            </select>
+          </label>
+          <label class="form-row"><span class="label">Evidence Support Filter</span>
+            <select class="select" id="bg-filter-evidence">
+              <option>Keep all</option>
+              <option selected>Require at least 1 supporting passage</option>
+              <option>Require at least 2 supporting passages</option>
+              <option>Require direct evidence support only</option>
+            </select>
+          </label>
+          <label class="form-row"><span class="label">Ambiguity Filter</span>
+            <select class="select" id="bg-filter-ambiguity">
+              <option>Off</option>
+              <option>Remove highly ambiguous items</option>
+              <option selected>Remove ambiguous + underspecified items</option>
+              <option>Strict clarity filtering</option>
+            </select>
+          </label>
+          <label class="form-row"><span class="label">Difficulty Filter</span>
+            <select class="select" id="bg-filter-difficulty">
+              <option>Keep all</option>
+              <option>Multi-document only</option>
+              <option>Cross-reference only</option>
+              <option>Medium+ difficulty only</option>
+              <option>Custom difficulty mix</option>
+            </select>
+          </label>
+          <label class="form-row"><span class="label">Quality Filter</span>
+            <select class="select" id="bg-filter-quality">
+              <option>Basic cleanup</option>
+              <option selected>Standard quality filtering</option>
+              <option>Strict quality filtering</option>
+              <option>Strict + formatting validation</option>
+            </select>
+          </label>
+          <label class="form-row"><span class="label">Balance Strategy</span>
+            <select class="select" id="bg-balance-strategy">
+              <option>No balancing</option>
+              <option selected>Balance by topic</option>
+              <option>Balance by source document</option>
+              <option>Balance by question type</option>
+              <option>Full balanced sampling</option>
+            </select>
+          </label>
+          <label class="form-row"><span class="label">Policy Filter</span>
+            <select class="select" id="bg-policy-filter">
+              <option>Keep all</option>
+              <option>Corpus-answerable only</option>
+              <option>Compliance-relevant only</option>
+              <option selected>Corpus-answerable + compliance-relevant</option>
+              <option>Strict benchmark policy</option>
+            </select>
+          </label>
+        </div>
+      </aside>
+    </div>
+    <div class="actions-row form-block-gap">
+      <button class="btn btn-primary btn-sm" id="bg-curate-btn">Curate</button>
+    </div>
+    <div id="bg-curate-feedback" class="muted"></div>
+  </section>
+
+  <!-- Validation -->
+  <section class="card">
+    <div class="card-header card-header-stack">
+      <h2 class="card-title">Validation</h2>
+      <p class="card-subtitle">Validate structure, source support, and evidence-answer consistency.</p>
+    </div>
+    <div class="config-layout">
+      <div class="config-groups">
+        <section class="config-group">
+          <h4 class="config-title">Validation Settings</h4>
+          <div class="form-grid form-grid-3">
+            <label class="form-row"><span class="label">Validation Mode</span>
+              <select class="select" id="bg-validation-mode">
+                <option>Basic validation</option>
+                <option selected>Standard validation</option>
+                <option>Strict validation</option>
+              </select>
+            </label>
+            <label class="form-row"><span class="label">Schema Check</span>
+              <select class="select" id="bg-schema-check">
+                <option>Required fields only</option>
+                <option>Required fields + type checks</option>
+                <option>Full schema validation</option>
+              </select>
+            </label>
+            <label class="form-row"><span class="label">Answer-Evidence Validation</span>
+              <select class="select" id="bg-answer-evidence">
+                <option>Off</option>
+                <option>Basic consistency check</option>
+                <option>NLI-based consistency</option>
+                <option>Strict evidence-answer validation</option>
+              </select>
+            </label>
+            <label class="form-row"><span class="label">Source Support Validation</span>
+              <select class="select" id="bg-source-support">
+                <option>At least 1 valid source</option>
+                <option selected>At least 2 valid sources</option>
+                <option>All cited sources must validate</option>
+              </select>
+            </label>
+          </div>
+        </section>
+      </div>
+      <aside class="config-summary">
+        <h4 class="config-title">Validation Summary</h4>
+        <table class="kv-table kv-table-compact">
+          <tbody>
+            <tr><th>Pass rate</th><td>—</td></tr>
+            <tr><th>Failed items</th><td>—</td></tr>
+            <tr><th>Unsupported items</th><td>—</td></tr>
+            <tr><th>Schema failures</th><td>—</td></tr>
+          </tbody>
+        </table>
+      </aside>
+    </div>
+    <div class="actions-row form-block-gap">
+      <button class="btn btn-primary btn-sm" id="bg-validate-btn">Validate</button>
+    </div>
+    <div id="bg-validate-feedback" class="muted"></div>
+  </section>
+
+  <!-- Expert Check -->
+  <section class="card">
+    <div class="card-header card-header-stack">
+      <h2 class="card-title">Expert Check</h2>
+      <p class="card-subtitle">Configure expert review assignment settings (not the review UI).</p>
+    </div>
+    <div class="config-layout">
+      <div class="config-groups">
+        <section class="config-group">
+          <h4 class="config-title">Assignment Settings</h4>
+          <div class="form-grid form-grid-4">
+            <label class="form-row"><span class="label">Assignment Mode</span>
+              <select class="select" id="bg-assign-mode">
+                <option>Random sample</option>
+                <option selected>Stratified sample</option>
+                <option>Risk-based sample</option>
+                <option>Full review</option>
+              </select>
+            </label>
+            <label class="form-row"><span class="label">Sample Type</span>
+              <select class="select" id="bg-sample-type">
+                <option>Fixed number</option>
+                <option selected>Percentage</option>
+              </select>
+            </label>
+            <label class="form-row"><span class="label">Expert Count</span>
+              <select class="select" id="bg-expert-count">
+                <option>1 expert</option>
+                <option selected>2 experts</option>
+                <option>3 experts</option>
+                <option>4 experts</option>
+              </select>
+            </label>
+            <label class="form-row"><span class="label">Double Review Rate</span>
+              <select class="select" id="bg-double-rate">
+                <option>0%</option>
+                <option>10%</option>
+                <option selected>20%</option>
+                <option>30%</option>
+                <option>50%</option>
+                <option>100%</option>
+              </select>
+            </label>
+            <label class="form-row"><span class="label">Conflict Resolution</span>
+              <select class="select" id="bg-conflict-resolution">
+                <option>No conflict resolution</option>
+                <option>Admin decision</option>
+                <option selected>Third expert review</option>
+                <option>Majority vote</option>
+              </select>
+            </label>
+            <label class="form-row"><span class="label">Review Criteria Preset</span>
+              <select class="select" id="bg-review-criteria">
+                <option>Basic quality check</option>
+                <option>Regulatory quality check</option>
+                <option>Evidence-focused review</option>
+                <option selected>Full expert review rubric</option>
+              </select>
+            </label>
+            <label class="form-row"><span class="label">Sample Size</span>
+              <input class="input" id="bg-sample-size" placeholder="e.g., 10% or 200" />
+            </label>
+            <label class="form-row"><span class="label">Min Sample Size</span>
+              <input class="input" id="bg-sample-min" placeholder="e.g., 50" />
+            </label>
+            <label class="form-row"><span class="label">Max Sample Size</span>
+              <input class="input" id="bg-sample-max" placeholder="e.g., 1000" />
+            </label>
+          </div>
+          <div class="muted">Review assignment will allocate items based on your sampling mode, number of experts, and double-review rate; disagreements will be resolved using the selected policy.</div>
+        </section>
+      </div>
+    </div>
+    <div class="actions-row form-block-gap">
+      <button class="btn btn-primary btn-sm" id="bg-assign-btn">Assign to Expert</button>
+    </div>
+    <div id="bg-assign-feedback" class="muted"></div>
+  </section>
+
+  <!-- Diagnosis -->
+  <section class="card">
+    <div class="card-header card-header-stack">
+      <h2 class="card-title">Benchmark Diagnosis</h2>
+      <p class="card-subtitle">Assess benchmark quality, balance, difficulty, retrieval support, and validation outcomes.</p>
+    </div>
+    <div class="config-layout">
+      <div class="config-groups">
+        <section class="config-group">
+          <h4 class="config-title">Diagnosis Controls</h4>
+          <div class="form-grid form-grid-3">
+            <label class="form-row"><span class="label">Diagnosis Mode</span>
+              <select class="select" id="bg-diagnosis-mode">
+                <option selected>Full diagnosis</option>
+                <option>Quick diagnosis</option>
+                <option>Quality-focused diagnosis</option>
+                <option>Retrieval-focused diagnosis</option>
+                <option>Distribution-focused diagnosis</option>
+              </select>
+            </label>
+            <label class="form-row"><span class="label">Distribution View</span>
+              <select class="select" id="bg-dist-view">
+                <option selected>Topic distribution</option>
+                <option>Source distribution</option>
+                <option>Question type distribution</option>
+                <option>Answer type distribution</option>
+                <option>All distributions</option>
+              </select>
+            </label>
+            <label class="form-row"><span class="label">Difficulty View</span>
+              <select class="select" id="bg-difficulty-view">
+                <option>Single vs multi-document</option>
+                <option>Single-hop vs multi-hop</option>
+                <option>Cross-reference dependency</option>
+                <option>Evidence-count profile</option>
+                <option selected>Full difficulty profile</option>
+              </select>
+            </label>
+            <label class="form-row"><span class="label">Quality Signals View</span>
+              <select class="select" id="bg-quality-signals">
+                <option>Duplicate rate</option>
+                <option>Ambiguity rate</option>
+                <option>Unsupported item rate</option>
+                <option>Malformed item rate</option>
+                <option selected>All quality signals</option>
+              </select>
+            </label>
+            <label class="form-row"><span class="label">Retrieval Diagnostics View</span>
+              <select class="select" id="bg-retrieval-diag">
+                <option>IR agreement only</option>
+                <option>Retrieval coverage only</option>
+                <option>Top-k support analysis</option>
+                <option selected>Full retrieval diagnostics</option>
+              </select>
+            </label>
+            <label class="form-row"><span class="label">Validation Summary View</span>
+              <select class="select" id="bg-validation-summary-view">
+                <option>Pass/fail summary</option>
+                <option>Filtering breakdown</option>
+                <option>Validation breakdown</option>
+                <option selected>Full processing summary</option>
+              </select>
+            </label>
+          </div>
+        </section>
+      </div>
+      <aside class="config-summary">
+        <h4 class="config-title">Diagnosis Summary</h4>
+        <table class="kv-table kv-table-compact">
+          <tbody>
+            <tr><th>Dataset summary</th><td>—</td></tr>
+            <tr><th>Distributions</th><td>—</td></tr>
+            <tr><th>Difficulty profile</th><td>—</td></tr>
+            <tr><th>Quality signals</th><td>—</td></tr>
+            <tr><th>Retrieval diagnostics</th><td>—</td></tr>
+            <tr><th>Generation + validation summary</th><td>—</td></tr>
+          </tbody>
+        </table>
+      </aside>
+    </div>
+    <div class="actions-row form-block-gap">
+      <button class="btn btn-primary btn-sm" id="bg-diagnose-btn">Diagnose</button>
+    </div>
+    <div id="bg-diagnose-feedback" class="muted"></div>
+  </section>
+
+  <!-- Save Benchmark -->
+  <section class="card">
+    <div class="card-header card-header-stack">
+      <h2 class="card-title">Save Benchmark</h2>
+      <p class="card-subtitle">Name and version your benchmark and set governance state.</p>
+    </div>
+    <div class="config-layout">
+      <div class="config-groups">
+        <section class="config-group">
+          <h4 class="config-title">Metadata</h4>
+          <div class="form-grid form-grid-3">
+            <label class="form-row"><span class="label">Benchmark Name</span>
+              <input class="input" id="bg-name" placeholder="e.g., FIN-Compliance-QA" />
+            </label>
+            <label class="form-row"><span class="label">Benchmark Version</span>
+              <input class="input" id="bg-version" placeholder="e.g., v2026.03" />
+            </label>
+            <label class="form-row"><span class="label">Save Mode</span>
+              <select class="select" id="bg-save-mode">
+                <option>Save as draft</option>
+                <option selected>Save as candidate benchmark</option>
+                <option>Save as approved benchmark</option>
+                <option>Save new benchmark version</option>
+              </select>
+            </label>
+          </div>
+          <div class="form-grid form-grid-1">
+            <label class="form-row"><span class="label">Admin Note</span>
+              <textarea class="textarea" rows="3" id="bg-admin-note" placeholder="Short note for audit trail"></textarea>
+            </label>
+          </div>
+          <div class="actions-row actions-row-equal form-block-gap">
+            <button class="btn btn-primary" id="bg-save-btn">Save Benchmark</button>
+          </div>
+          <div id="bg-save-feedback" class="muted"></div>
+        </section>
+      </div>
+    </div>
+  </section>
+
+  <!-- Benchmark Library, Results, History -->
+  <section class="card">
+    <div class="card-header">
+      <h2 class="card-title">Benchmark Library</h2>
+      <p class="card-subtitle">Select a benchmark suite to run against a document set and method configuration.</p>
+    </div>
+    <div class="table-scroll table-scroll-y">
+      <table class="data-table">
+        <thead>
+          <tr>
+            <th>Benchmark</th>
+            <th>Questions</th>
+            <th>Coverage</th>
+            <th>Description</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr><td>Full Benchmark</td><td>1,000</td><td>Broad</td><td>Comprehensive question set for full-scope evaluation.</td></tr>
+          <tr><td>Sample Benchmark</td><td>100</td><td>Focused</td><td>Faster subset for iterative testing.</td></tr>
+        </tbody>
+      </table>
+    </div>
+    <div class="form-grid form-grid-2 form-block-gap">
+      <label class="form-row"><span class="label">Benchmark</span>
+        <select class="select" id="benchmark-select"><option>Sample Benchmark</option><option>Full Benchmark</option></select>
+      </label>
+      <label class="form-row"><span class="label">Sample Size (optional)</span>
+        <input class="input" id="benchmark-sample-size" placeholder="e.g., 100" />
+      </label>
+    </div>
+    <div class="actions-row actions-row-equal">
+      <button class="btn btn-primary" id="benchmark-run-btn">Run Benchmark</button>
+      <button class="btn" id="benchmark-save-config-btn">Save Benchmark Config</button>
+    </div>
+    <div id="benchmark-config-feedback" class="muted" style="margin-top:8px"></div>
+  </section>
+
+  <section class="card">
+    <div class="card-header">
+      <h2 class="card-title">Recent Benchmark Results</h2>
+      <p class="card-subtitle">Summary of latest runs across key metrics.</p>
+    </div>
+    <div class="table-scroll table-scroll-y">
+      <table class="data-table">
+        <thead>
+          <tr>
+            <th>Run ID</th>
+            <th>Benchmark</th>
+            <th>Document Set</th>
+            <th>Method</th>
+            <th>Recall@10</th>
+            <th>RePASs Overall</th>
+            <th>Human Acc.</th>
+            <th>Status</th>
+            <th>Date</th>
+          </tr>
+        </thead>
+        <tbody id="benchmark-results-body">
+          <tr><td>BM-240322-07</td><td>Sample</td><td>CORP-FIN-2026-03</td><td>METH-RAG-v1.3</td><td>0.86</td><td>0.945</td><td>0.937</td><td><span class="status status--active">Completed</span></td><td>22 Mar 2026</td></tr>
+          <tr><td>BM-240318-02</td><td>Full</td><td>CORP-FIN-2026-03</td><td>METH-RAG-v1.3</td><td>0.84</td><td>0.940</td><td>0.931</td><td><span class="status status--active">Completed</span></td><td>18 Mar 2026</td></tr>
+        </tbody>
+      </table>
+    </div>
+    <div class="actions-row">
+      <button class="btn">Export Results</button>
+      <button class="btn">View Details</button>
+    </div>
+  </section>
+
+  <section class="card">
+    <div class="card-header">
+      <h2 class="card-title">Benchmark Version History</h2>
+      <p class="card-subtitle">Previously saved benchmark configurations.</p>
+    </div>
+    <div class="table-scroll table-scroll-y">
+      <table class="data-table">
+        <thead>
+          <tr>
+            <th>Saved At</th>
+            <th>Benchmark</th>
+            <th>Sample Size</th>
+          </tr>
+        </thead>
+        <tbody id="benchmark-config-history-body"></tbody>
+      </table>
+    </div>
+  </section>
+</div>
+
+</section>
+
+        <section class="tab-panel" id="panel-runs" role="tabpanel" aria-labelledby="tab-runs" hidden>
+<div class="panel-section">
+  <section class="card">
+    <div class="card-header card-header-stack">
+      <h2 class="card-title">Current Pipeline</h2>
+      <p class="card-subtitle">Current production pipeline configuration and linked versions used as the reference point.</p>
+    </div>
+    <div class="config-layout">
+      <div class="config-groups">
+        <section class="config-group">
+          <h4 class="config-title">Linked Versions</h4>
+          <table class="kv-table">
+            <tbody>
+              <tr><th>Pipeline Version</th><td id="linked-pipeline-version">PIPE-RAG-v1.3</td></tr>
+              <tr><th>Document Set</th><td>CORP-FIN-2026-03</td></tr>
+              <tr><th>Method Version</th><td id="linked-method-version">METH-RAG-v1.3</td></tr>
+              <tr><th>Evaluation Version</th><td>EV-240318-04</td></tr>
+              <tr><th>Active Release</th><td>AGR-FIN-v1.3</td></tr>
+            </tbody>
+          </table>
+        </section>
+      </div>
+
+      <aside class="config-summary">
+        <h4 class="config-title">Technical Details</h4>
+        <table class="kv-table kv-table-compact">
+          <tbody>
+            <tr><th>LLM Model</th><td>GPT-4.1</td></tr>
+            <tr><th>Embedding</th><td>BGE-large</td></tr>
+            <tr><th>Reranker</th><td>Cross-Encoder v2</td></tr>
+            <tr><th>Retrieval</th><td>Hybrid Search • Top-k 12</td></tr>
+            <tr><th>Answer Mode</th><td>Concise Grounded Summary</td></tr>
+            <tr><th>Traceability</th><td>Strict</td></tr>
+            <tr><th>Citation</th><td>Inline Source Citations</td></tr>
+            <tr><th>Evidence Thresh.</th><td>0.82</td></tr>
+            <tr><th>Confidence Thresh.</th><td>0.75</td></tr>
+            <tr><th>Retrieval Thresh.</th><td>0.68</td></tr>
+          </tbody>
+        </table>
+      </aside>
+    </div>
+  </section>
+
+  <section class="card">
+    <div class="card-header card-header-stack">
+      <h2 class="card-title">Method Configuration</h2>
+      <p class="card-subtitle">Configure the model, retrieval, response, and threshold settings for this pipeline. Save with a method version name to track your configuration.</p>
+    </div>
+    <div class="config-layout">
+      <div class="config-groups">
+        <section class="config-group">
+          <h4 class="config-title">Model Settings</h4>
+          <div class="form-grid form-grid-3">
+            <label class="form-row"><span class="label">LLM Model</span><select class="select" id="method-llm-select"><option selected>GPT-4.1</option><option>Claude 3.7 Sonnet</option><option>Gemini 2.0 Pro</option></select></label>
+            <label class="form-row"><span class="label">Embedding Model</span><select class="select" id="method-embedding-select"><option selected>BGE-large</option><option>e5-large</option><option>all-mpnet-base-v2</option></select></label>
+            <label class="form-row"><span class="label">Reranker</span><select class="select" id="method-reranker-select"><option selected>Cross-Encoder v2</option><option>Cohere Rerank</option><option>None</option></select></label>
+          </div>
+        </section>
+
+        <section class="config-group">
+          <h4 class="config-title">Retrieval Settings</h4>
+          <div class="form-grid form-grid-4">
+            <label class="form-row"><span class="label">Retrieval Method</span><select class="select" id="method-retrieval-select"><option selected>Hybrid Search</option><option>Dense Retrieval</option><option>BM25 + Rerank</option></select></label>
+            <label class="form-row"><span class="label">Top-k</span><input class="input" id="method-topk-input" value="12" /></label>
+            <label class="form-row"><span class="label">Context Selection</span><select class="select"><option selected>Balanced Context Window</option><option>Strict Relevance</option><option>Broader Coverage</option></select></label>
+            <label class="form-row"><span class="label">Evidence Selection</span><select class="select"><option selected>Top Evidence First</option><option>Section Diversity</option><option>Policy Priority</option></select></label>
+          </div>
+        </section>
+
+        <section class="config-group">
+          <h4 class="config-title">Response Settings</h4>
+          <div class="form-grid form-grid-3">
+            <label class="form-row"><span class="label">Answer Mode</span><select class="select" id="method-answer-select"><option selected>Concise Grounded Summary</option><option>Detailed Policy Summary</option><option>Evidence-First Response</option></select></label>
+            <label class="form-row"><span class="label">Traceability Mode</span><select class="select" id="method-traceability-select"><option selected>Strict</option><option>Standard</option></select></label>
+            <label class="form-row"><span class="label">Citation Mode</span><select class="select"><option selected>Inline Source Citations</option><option>Footnote Citations</option><option>Reference List Only</option></select></label>
+          </div>
+        </section>
+
+        <section class="config-group">
+          <h4 class="config-title">Thresholds</h4>
+          <div class="form-grid form-grid-3">
+            <label class="form-row"><span class="label">Evidence Threshold</span><input class="input" id="method-evidence-thresh" value="0.82" /></label>
+            <label class="form-row"><span class="label">Confidence Threshold</span><input class="input" id="method-confidence-thresh" value="0.75" /></label>
+            <label class="form-row"><span class="label">Retrieval Threshold</span><input class="input" id="method-retrieval-thresh" value="0.68" /></label>
+          </div>
+        </section>
+      </div>
+
+      <aside class="config-summary">
+        <h4 class="config-title">Configuration Summary</h4>
+        <table class="kv-table kv-table-compact">
+          <tbody>
+            <tr><th>LLM Model</th><td id="config-summary-llm">GPT-4.1</td></tr>
+            <tr><th>Embedding</th><td id="config-summary-embedding">BGE-large</td></tr>
+            <tr><th>Reranker</th><td id="config-summary-reranker">Cross-Encoder v2</td></tr>
+            <tr><th>Retrieval</th><td id="config-summary-retrieval">Hybrid Search • Top-k 12</td></tr>
+            <tr><th>Answer Mode</th><td id="config-summary-answer">Concise Grounded Summary</td></tr>
+            <tr><th>Traceability</th><td id="config-summary-traceability">Strict</td></tr>
+            <tr><th>Evidence Threshold</th><td id="config-summary-evidence-thresh">0.82</td></tr>
+            <tr><th>Confidence Threshold</th><td id="config-summary-confidence-thresh">0.75</td></tr>
+            <tr><th>Retrieval Threshold</th><td id="config-summary-retrieval-thresh">0.68</td></tr>
+          </tbody>
+        </table>
+        <div class="form-grid form-grid-1 form-block-gap">
+          <label class="form-row"><span class="label">Method Version Name</span><input id="method-version-name" class="input" aria-label="Method Version Name" placeholder="e.g., METH-RAG-v1.4-exp" /></label>
+        </div>
+        <div class="actions-row actions-row-equal form-block-gap">
+          <button class="btn btn-primary">Run Method</button>
+          <button class="btn">Save Method Configuration</button>
+        </div>
+      </aside>
+    </div>
+  </section>
+
+  
+
+  <section class="card">
+    <div class="card-header card-header-stack">
+      <h2 class="card-title">Evaluation Setup</h2>
+      <p class="card-subtitle">Configure and run evaluation with selected document set and method configuration. Set acceptance criteria and select question set.</p>
+    </div>
+    <div class="config-layout">
+      <div class="config-groups">
+        <section class="config-group">
+          <h4 class="config-title">Configuration Selection</h4>
+          <div class="form-grid form-grid-2">
+            <label class="form-row"><span class="label">Document Set</span>
+              <select class="select" id="pipeline-document-set-select" data-document-set-target="pipeline">
+                <option selected>CORP-FIN-2026-03</option>
+                <option>CORP-FIN-2026-03-CAND</option>
+              </select>
+            </label>
+            <label class="form-row"><span class="label">Method Configuration</span>
+              <select class="select" id="evaluation-method-select">
+                <option selected>Current Pipeline</option>
+                <option>Proposed Configuration</option>
+              </select>
+            </label>
+          </div>
+        </section>
+
+        <section class="config-group">
+          <h4 class="config-title">Acceptance Criteria</h4>
+          <div class="form-grid form-grid-4">
+            <label class="form-row"><span class="label">Coverage (%)</span><input class="input" id="evaluation-coverage" value="94" placeholder="e.g., 94" /></label>
+            <label class="form-row"><span class="label">Evidence Grounding (%)</span><input class="input" id="evaluation-evidence" value="95" placeholder="e.g., 95" /></label>
+            <label class="form-row"><span class="label">Traceability (%)</span><input class="input" id="evaluation-traceability" value="97" placeholder="e.g., 97" /></label>
+            <label class="form-row"><span class="label">Critical Issues (max)</span><input class="input" id="evaluation-critical" value="0" placeholder="e.g., 0" /></label>
+          </div>
+        </section>
+
+        <section class="config-group">
+          <h4 class="config-title">Question Set</h4>
+          <div class="form-grid form-grid-2">
+            <label class="form-row"><span class="label">Benchmark</span>
+              <select class="select" id="evaluation-benchmark-select">
+                <option>Full Benchmark</option>
+                <option selected>Sample Benchmark</option>
+              </select>
+            </label>
+            <label class="form-row"><span class="label">Sample Size</span><input class="input" id="evaluation-sample-size" value="100" placeholder="e.g., 100" /></label>
+          </div>
+        </section>
+      </div>
+
+      <aside class="config-summary">
+        <h4 class="config-title">Evaluation Summary</h4>
+        <table class="kv-table kv-table-compact">
+          <tbody>
+            <tr><th>Document Set</th><td id="evaluation-summary-document-set">CORP-FIN-2026-03</td></tr>
+            <tr><th>Method</th><td id="evaluation-summary-method">Current Pipeline</td></tr>
+            <tr><th>Coverage Target</th><td id="evaluation-summary-coverage">≥ 94%</td></tr>
+            <tr><th>Evidence Grounding</th><td id="evaluation-summary-evidence">≥ 95%</td></tr>
+            <tr><th>Traceability Target</th><td id="evaluation-summary-traceability">≥ 97%</td></tr>
+            <tr><th>Critical Issues</th><td id="evaluation-summary-critical">= 0</td></tr>
+            <tr><th>Question Set</th><td id="evaluation-summary-question-set">Sample (100 q)</td></tr>
+          </tbody>
+        </table>
+        <div class="form-grid form-grid-1 form-block-gap">
+          <label class="form-row"><span class="label">Evaluation Version Name</span><input id="evaluation-version-name" class="input" aria-label="Evaluation Version Name" placeholder="e.g., EV-2026-Q1-test" /></label>
+        </div>
+        <div class="actions-row actions-row-equal form-block-gap">
+          <button class="btn btn-primary">Run Evaluation</button>
+          <button class="btn">Save Evaluation Configuration</button>
+        </div>
+      </aside>
+    </div>
+  </section>
+
+  <!-- Expert Check -->
+  <section class="card">
+    <div class="card-header card-header-stack">
+      <h2 class="card-title">Expert Check</h2>
+      <p class="card-subtitle">Configure assignment and trigger expert review for this evaluation.</p>
+    </div>
+    <div class="config-layout">
+      <div class="config-groups">
+        <section class="config-group">
+          <h4 class="config-title">Assignment Settings</h4>
+          <div class="form-grid form-grid-4">
+            <label class="form-row"><span class="label">Assignment Mode</span>
+              <select class="select" id="ev-assign-mode">
+                <option>Random sample</option>
+                <option selected>Stratified sample</option>
+                <option>Risk-based sample</option>
+                <option>Full review</option>
+              </select>
+            </label>
+            <label class="form-row"><span class="label">Sample Type</span>
+              <select class="select" id="ev-sample-type">
+                <option>Fixed number</option>
+                <option selected>Percentage</option>
+              </select>
+            </label>
+            <label class="form-row"><span class="label">Expert Count</span>
+              <select class="select" id="ev-expert-count">
+                <option>1 expert</option>
+                <option selected>2 experts</option>
+                <option>3 experts</option>
+                <option>4 experts</option>
+              </select>
+            </label>
+            <label class="form-row"><span class="label">Double Review Rate</span>
+              <select class="select" id="ev-double-rate">
+                <option>0%</option>
+                <option>10%</option>
+                <option selected>20%</option>
+                <option>30%</option>
+                <option>50%</option>
+                <option>100%</option>
+              </select>
+            </label>
+            <label class="form-row"><span class="label">Conflict Resolution</span>
+              <select class="select" id="ev-conflict-resolution">
+                <option>No conflict resolution</option>
+                <option>Admin decision</option>
+                <option selected>Third expert review</option>
+                <option>Majority vote</option>
+              </select>
+            </label>
+            <label class="form-row"><span class="label">Sample Size</span>
+              <input class="input" id="ev-sample-size" placeholder="e.g., 10% or 200" />
+            </label>
+            <label class="form-row"><span class="label">Min Sample Size</span>
+              <input class="input" id="ev-sample-min" placeholder="e.g., 50" />
+            </label>
+            <label class="form-row"><span class="label">Max Sample Size</span>
+              <input class="input" id="ev-sample-max" placeholder="e.g., 1000" />
+            </label>
+          </div>
+          <div class="muted">Assignment is applied to the selected Benchmark and current method; double-review controls agreement checks.</div>
+        </section>
+      </div>
+    </div>
+    <div class="actions-row form-block-gap">
+      <button class="btn btn-primary btn-sm" id="ev-assign-btn">Assign to Expert</button>
+    </div>
+    <div id="ev-assign-feedback" class="muted"></div>
+  </section>
+
+  <section class="card">
+    <div class="card-header card-header-stack">
+      <h3 class="card-title">Release Readiness Review</h3>
+      <p class="card-subtitle">Current vs Proposed comparison before final release decision.</p>
+    </div>
+    <table class="data-table">
+      <thead>
+        <tr>
+          <th>Field</th>
+          <th>Current</th>
+          <th>Proposed</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr><th>Document Set</th><td>CORP-FIN-2026-03</td><td>CORP-FIN-2026-03-CAND</td></tr>
+        <tr><th>Pipeline Version</th><td>PIPE-RAG-v1.3</td><td>PIPE-RAG-v1.4-exp</td></tr>
+        <tr><th>Coverage Pass Rate</th><td>93.7%</td><td>94.8%</td></tr>
+        <tr><th>Evidence Grounding</th><td>93.7%</td><td>96.1%</td></tr>
+        <tr><th>Traceability Pass Rate</th><td>97.1%</td><td>98.3%</td></tr>
+        <tr><th>Blocking Issues</th><td>0 critical</td><td>0 critical • 7 review-required</td></tr>
+        <tr><th>Recommendation</th><td>Stable current pipeline</td><td>Proceed to version comparison</td></tr>
+      </tbody>
+    </table>
+    <div class="form-grid form-grid-1 form-block-gap">
+      <label class="form-row"><span class="label">New Pipeline Version Name</span><input id="pipeline-version-name" class="input" aria-label="New Pipeline Version Name" placeholder="e.g., PIPE-RAG-v1.4" /></label>
+    </div>
+    <div class="actions-row actions-row-equal">
+      <button class="btn">Save Pipeline Version</button>
+    </div>
+  </section>
+</div>
+
+</section>
+
+        <section class="tab-panel" id="panel-versions" role="tabpanel" aria-labelledby="tab-versions" hidden>
+<div class="panel-section">
+  <section class="card">
+    <div class="card-header card-header-stack">
+      <h2 class="card-title">Release History</h2>
+      <p class="card-subtitle">Previously published releases and key metadata.</p>
+    </div>
+    <div class="table-scroll table-scroll-y">
+      <table class="data-table">
+        <thead>
+          <tr>
+            <th>Release ID</th>
+            <th>Date</th>
+            <th>Status</th>
+            <th>Benchmark</th>
+            <th>Document Set</th>
+            <th>Pipeline</th>
+            <th>Published by</th>
+            <th>Notes</th>
+          </tr>
+        </thead>
+        <tbody id="release-history-body">
+          <tr><td>AGR-FIN-v1.3</td><td>12 Mar 2026</td><td><span class="status status--active">Active</span></td><td>BM-240322-07</td><td>CORP-FIN-2026-03</td><td>PIPE-RAG-v1.3</td><td>compliance-admin01</td><td>Promoted after EV-240318-04</td></tr>
+          <tr><td>AGR-FIN-v1.4</td><td>—</td><td><span class="status status--review">On Hold</span></td><td>BM-240322-07</td><td>CORP-FIN-2026-03-CAND</td><td>PIPE-RAG-v1.4-exp</td><td>compliance-admin01</td><td>Awaiting final approval</td></tr>
+          <tr><td>AGR-FIN-v1.2</td><td>10 Dec 2025</td><td><span class="status">Archived</span></td><td>—</td><td>CORP-FIN-2025-11</td><td>PIPE-RAG-v1.2</td><td>compliance-admin01</td><td>Superseded by v1.3</td></tr>
+        </tbody>
+      </table>
+    </div>
+  </section>
+
+  <section class="card">
+    <div class="card-header card-header-stack">
+      <h2 class="card-title">Release Comparison</h2>
+      <p class="card-subtitle">Select any two releases to compare configuration and quality metrics.</p>
+    </div>
+    <div class="config-layout">
+      <div class="config-groups">
+        <section class="config-group">
+          <h4 class="config-title">Details</h4>
+          <div>
+            <table class="data-table">
+              <thead>
+                <tr>
+                  <th>Field</th>
+                  <th>Release A</th>
+                  <th>Release B</th>
+                </tr>
+              </thead>
+              <tbody id="compare-details-body"></tbody>
+            </table>
+          </div>
+        </section>
+      </div>
+
+      <aside class="config-summary">
+        <h4 class="config-title">Metrics Comparison</h4>
+        <div class="metrics-compact">
+          <h5 style="margin:6px 0">IR Metrics</h5>
+          <div>
+            <div style="display:flex;align-items:center;gap:8px;margin:6px 0"><div style="width:120px;color:#5d6c82">Recall@10</div><div style="flex:1;display:flex;gap:6px"><div id="bar-ir-recall-a" style="height:8px;background:#0f3b63;width:0%"></div><div id="bar-ir-recall-b" style="height:8px;background:#89a9c6;width:0%"></div></div><span id="label-ir-recall" style="color:#5d6c82"></span></div>
+            <div style="display:flex;align-items:center;gap:8px;margin:6px 0"><div style="width:120px;color:#5d6c82">MAP@10</div><div style="flex:1;display:flex;gap:6px"><div id="bar-ir-map-a" style="height:8px;background:#0f3b63;width:0%"></div><div id="bar-ir-map-b" style="height:8px;background:#89a9c6;width:0%"></div></div><span id="label-ir-map" style="color:#5d6c82"></span></div>
+            <div style="display:flex;align-items:center;gap:8px;margin:6px 0"><div style="width:120px;color:#5d6c82">MRR@10</div><div style="flex:1;display:flex;gap:6px"><div id="bar-ir-mrr-a" style="height:8px;background:#0f3b63;width:0%"></div><div id="bar-ir-mrr-b" style="height:8px;background:#89a9c6;width:0%"></div></div><span id="label-ir-mrr" style="color:#5d6c82"></span></div>
+          </div>
+
+          <h5 style="margin:12px 0 6px">RePASs Metrics</h5>
+          <div>
+            <div style="display:flex;align-items:center;gap:8px;margin:6px 0"><div style="width:120px;color:#5d6c82">Overall</div><div style="flex:1;display:flex;gap:6px"><div id="bar-repass-overall-a" style="height:8px;background:#0f3b63;width:0%"></div><div id="bar-repass-overall-b" style="height:8px;background:#89a9c6;width:0%"></div></div><span id="label-repass-overall" style="color:#5d6c82"></span></div>
+            <div style="display:flex;align-items:center;gap:8px;margin:6px 0"><div style="width:120px;color:#5d6c82">Entailment</div><div style="flex:1;display:flex;gap:6px"><div id="bar-repass-entail-a" style="height:8px;background:#0f3b63;width:0%"></div><div id="bar-repass-entail-b" style="height:8px;background:#89a9c6;width:0%"></div></div><span id="label-repass-entail" style="color:#5d6c82"></span></div>
+            <div style="display:flex;align-items:center;gap:8px;margin:6px 0"><div style="width:120px;color:#5d6c82">Contradiction</div><div style="flex:1;display:flex;gap:6px"><div id="bar-repass-contr-a" style="height:8px;background:#0f3b63;width:0%"></div><div id="bar-repass-contr-b" style="height:8px;background:#89a9c6;width:0%"></div></div><span id="label-repass-contr" style="color:#5d6c82"></span></div>
+            <div style="display:flex;align-items:center;gap:8px;margin:6px 0"><div style="width:120px;color:#5d6c82">Obligation Cov.</div><div style="flex:1;display:flex;gap:6px"><div id="bar-repass-oblg-a" style="height:8px;background:#0f3b63;width:0%"></div><div id="bar-repass-oblg-b" style="height:8px;background:#89a9c6;width:0%"></div></div><span id="label-repass-oblg" style="color:#5d6c82"></span></div>
+          </div>
+
+          <h5 style="margin:12px 0 6px">Human Evaluation</h5>
+          <div>
+            <div style="display:flex;align-items:center;gap:8px;margin:6px 0"><div style="width:120px;color:#5d6c82">Accuracy</div><div style="flex:1;display:flex;gap:6px"><div id="bar-human-acc-a" style="height:8px;background:#0f3b63;width:0%"></div><div id="bar-human-acc-b" style="height:8px;background:#89a9c6;width:0%"></div></div><span id="label-human-acc" style="color:#5d6c82"></span></div>
+            <div style="display:flex;align-items:center;gap:8px;margin:6px 0"><div style="width:120px;color:#5d6c82">Completeness</div><div style="flex:1;display:flex;gap:6px"><div id="bar-human-comp-a" style="height:8px;background:#0f3b63;width:0%"></div><div id="bar-human-comp-b" style="height:8px;background:#89a9c6;width:0%"></div></div><span id="label-human-comp" style="color:#5d6c82"></span></div>
+            <div style="display:flex;align-items:center;gap:8px;margin:6px 0"><div style="width:120px;color:#5d6c82">Grounding</div><div style="flex:1;display:flex;gap:6px"><div id="bar-human-grnd-a" style="height:8px;background:#0f3b63;width:0%"></div><div id="bar-human-grnd-b" style="height:8px;background:#89a9c6;width:0%"></div></div><span id="label-human-grnd" style="color:#5d6c82"></span></div>
+            <div style="display:flex;align-items:center;gap:8px;margin:6px 0"><div style="width:120px;color:#5d6c82">Readability</div><div style="flex:1;display:flex;gap:6px"><div id="bar-human-read-a" style="height:8px;background:#0f3b63;width:0%"></div><div id="bar-human-read-b" style="height:8px;background:#89a9c6;width:0%"></div></div><span id="label-human-read" style="color:#5d6c82"></span></div>
+            <div style="display:flex;align-items:center;gap:8px;margin:6px 0"><div style="width:120px;color:#5d6c82">Simplicity</div><div style="flex:1;display:flex;gap:6px"><div id="bar-human-simp-a" style="height:8px;background:#0f3b63;width:0%"></div><div id="bar-human-simp-b" style="height:8px;background:#89a9c6;width:0%"></div></div><span id="label-human-simp" style="color:#5d6c82"></span></div>
+            <div style="display:flex;align-items:center;gap:8px;margin:6px 0"><div style="width:120px;color:#5d6c82">Expert Acceptance</div><div style="flex:1;display:flex;gap:6px"><div id="bar-human-accp-a" style="height:8px;background:#0f3b63;width:0%"></div><div id="bar-human-accp-b" style="height:8px;background:#89a9c6;width:0%"></div></div><span id="label-human-accp" style="color:#5d6c82"></span></div>
+          </div>
+        </div>
+      </aside>
+    </div>
+  </section>
+
+  <section class="card">
+    <div class="card-header card-header-stack">
+      <h2 class="card-title">Publish Decision</h2>
+      <p class="card-subtitle">Choose a release to publish, add an admin note, and confirm.</p>
+    </div>
+    <div class="form-grid form-grid-2">
+      <label class="form-row"><span class="label">Release to Publish</span>
+        <select class="select" id="publish-release-select"></select>
+      </label>
+      <label class="form-row"><span class="label">Decision</span>
+        <select class="select" id="publish-decision-select"><option selected>Publish</option><option>Hold</option></select>
+      </label>
+    </div>
+    <div class="form-grid form-grid-1 form-block-gap">
+      <label class="form-row"><span class="label">Admin Note</span><textarea id="publish-note" class="input" rows="3" placeholder="Short note for audit trail"></textarea></label>
+    </div>
+    <div class="actions-row actions-row-equal">
+      <button class="btn btn-primary" id="publish-release-btn">Publish</button>
+    </div>
+    <div id="publish-feedback" class="muted" style="margin-top:8px"></div>
+  </section>
+</div>
+
+</section>
+      </main>
+    </div>
+
+    <footer class="advisory" role="contentinfo">
+      AskRegula provides evidence-grounded regulatory assistance, but outputs should be reviewed by qualified professionals before being used for legal, compliance, or operational decisions.
+    </footer>
+  </div>
+
+  <script>
+    async function loadIncludes() {
+      const panels = document.querySelectorAll('.tab-panel[data-include]');
+      await Promise.all(Array.from(panels).map(async (p) => {
+        const rel = p.getAttribute('data-include');
+        if (!rel) return;
+        try {
+          const url = new URL(rel, window.location.href).toString();
+          const res = await fetch(url);
+          if (!res.ok) throw new Error(`HTTP ${res.status}`);
+          const html = await res.text();
+          p.innerHTML = html;
+        } catch (err) {
+          const fileHint = window.location.protocol === 'file:' ? ' — Tip: open via a local server (e.g., Live Server).' : '';
+          p.innerHTML = `<div class="panel-section"><div class="muted">Couldn’t load panel: ${rel}${fileHint}</div></div>`;
+          console.error('Panel include failed for', rel, err);
+        }
+      }));
+    }
+
+    function initAdminConsole() {
+      const tabs = document.querySelectorAll('.tabs .tab');
+      const panels = document.querySelectorAll('.tab-panel');
+
+      function activateTab(targetId) {
+        tabs.forEach(t => {
+          const active = t.id === 'tab-' + targetId;
+          t.classList.toggle('is-active', active);
+          t.setAttribute('aria-selected', String(active));
+        });
+        panels.forEach(p => {
+          const match = p.id === 'panel-' + targetId;
+          p.classList.toggle('is-active', match);
+          if (match) {
+            p.removeAttribute('hidden');
+          } else {
+            p.setAttribute('hidden', 'hidden');
+          }
+        });
+      }
+
+      tabs.forEach(tab => {
+        tab.addEventListener('click', () => {
+          const id = tab.id.replace('tab-', '');
+          activateTab(id);
+        });
+        tab.addEventListener('keydown', (e) => {
+          if (e.key === 'Enter' || e.key === ' ') {
+            e.preventDefault();
+            const id = tab.id.replace('tab-', '');
+            activateTab(id);
+          }
+        });
+      });
+
+      const documentSetVersionInput = document.getElementById('document-set-version-name');
+      const createDocumentSetVersionBtn = document.getElementById('create-document-set-version-btn');
+      const pipelineDocumentSetSelects = document.querySelectorAll('select[data-document-set-target="pipeline"]');
+      const evaluationSummaryDocumentSet = document.getElementById('evaluation-summary-document-set');
+      const methodVersionInput = document.getElementById('method-version-name');
+      const linkedMethodVersionCell = document.getElementById('linked-method-version');
+      const pipelineVersionInput = document.getElementById('pipeline-version-name');
+      const linkedPipelineVersionCell = document.getElementById('linked-pipeline-version');
+      // Method Configuration controls
+      const mcLLM = document.getElementById('method-llm-select');
+      const mcEmbedding = document.getElementById('method-embedding-select');
+      const mcReranker = document.getElementById('method-reranker-select');
+      const mcRetrieval = document.getElementById('method-retrieval-select');
+      const mcTopK = document.getElementById('method-topk-input');
+      const mcAnswer = document.getElementById('method-answer-select');
+      const mcTrace = document.getElementById('method-traceability-select');
+      const mcEvThresh = document.getElementById('method-evidence-thresh');
+      const mcConfThresh = document.getElementById('method-confidence-thresh');
+      const mcRetThresh = document.getElementById('method-retrieval-thresh');
+      // Method Configuration summary cells
+      const csLLM = document.getElementById('config-summary-llm');
+      const csEmbedding = document.getElementById('config-summary-embedding');
+      const csReranker = document.getElementById('config-summary-reranker');
+      const csRetrieval = document.getElementById('config-summary-retrieval');
+      const csAnswer = document.getElementById('config-summary-answer');
+      const csTrace = document.getElementById('config-summary-traceability');
+      const csEvThresh = document.getElementById('config-summary-evidence-thresh');
+      const csConfThresh = document.getElementById('config-summary-confidence-thresh');
+      const csRetThresh = document.getElementById('config-summary-retrieval-thresh');
+      // Evaluation controls
+      const evalMethod = document.getElementById('evaluation-method-select');
+      const evalCoverage = document.getElementById('evaluation-coverage');
+      const evalEvidence = document.getElementById('evaluation-evidence');
+      const evalTraceability = document.getElementById('evaluation-traceability');
+      const evalCritical = document.getElementById('evaluation-critical');
+      const evalBenchmark = document.getElementById('evaluation-benchmark-select');
+      const evalSampleSize = document.getElementById('evaluation-sample-size');
+      // Evaluation summary cells
+      const esMethod = document.getElementById('evaluation-summary-method');
+      const esCoverage = document.getElementById('evaluation-summary-coverage');
+      const esEvidence = document.getElementById('evaluation-summary-evidence');
+      const esTraceability = document.getElementById('evaluation-summary-traceability');
+      const esCritical = document.getElementById('evaluation-summary-critical');
+      const esQuestionSet = document.getElementById('evaluation-summary-question-set');
+
+      // Versions & Release data and bindings (for comparison and publish UI)
+      const releaseData = {
+        'AGR-FIN-v1.3': {
+          id: 'AGR-FIN-v1.3', docset: 'CORP-FIN-2026-03', benchmark: 'BM-240322-07', pipeline: 'PIPE-RAG-v1.3', method: 'METH-RAG-v1.3', llm: 'GPT-4.1',
+          thresholds: { evidence: 0.82, confidence: 0.75, retrieval: 0.68 }, trace: 'Strict', citation: 'Inline Source Citations',
+          eval: 'EV-240318-04', rec: 'Stable current pipeline',
+          ir: { recall10: 0.86, map10: 0.61, mrr10: 0.68 },
+          repass: { overall: 0.945, entailment: 0.955, contradiction: 0.012, obligation: 0.932 },
+          human: { accuracy: 0.937, completeness: 0.948, grounding: 0.961, readability: 0.914, simplicity: 0.902, acceptance: 0.921 }
+        },
+        'AGR-FIN-v1.4-rc1': {
+          id: 'AGR-FIN-v1.4-rc1', docset: 'CORP-FIN-2026-03-CAND', benchmark: 'BM-240322-07', pipeline: 'PIPE-RAG-v1.4-exp', method: 'METH-RAG-v1.4-exp', llm: 'GPT-4.1',
+          thresholds: { evidence: 0.82, confidence: 0.75, retrieval: 0.68 }, trace: 'Strict', citation: 'Inline Source Citations',
+          eval: 'EV-240318-05', rec: 'Proceed to version comparison',
+          ir: { recall10: 0.89, map10: 0.66, mrr10: 0.72 },
+          repass: { overall: 0.958, entailment: 0.966, contradiction: 0.009, obligation: 0.944 },
+          human: { accuracy: 0.949, completeness: 0.961, grounding: 0.969, readability: 0.925, simplicity: 0.913, acceptance: 0.937 }
+        },
+        'AGR-FIN-v1.2': {
+          id: 'AGR-FIN-v1.2', docset: 'CORP-FIN-2025-11', benchmark: '—', pipeline: 'PIPE-RAG-v1.2', method: 'METH-RAG-v1.2', llm: 'GPT-4.1',
+          thresholds: { evidence: 0.80, confidence: 0.74, retrieval: 0.66 }, trace: 'Standard', citation: 'Inline Source Citations',
+          eval: 'EV-251110-02', rec: 'Archived',
+          ir: { recall10: 0.82, map10: 0.57, mrr10: 0.63 },
+          repass: { overall: 0.932, entailment: 0.940, contradiction: 0.018, obligation: 0.918 },
+          human: { accuracy: 0.921, completeness: 0.932, grounding: 0.940, readability: 0.902, simplicity: 0.892, acceptance: 0.907 }
+        }
+      };
+
+      let currentAKey = 'AGR-FIN-v1.3';
+      let currentBKey = 'AGR-FIN-v1.4-rc1';
+      const publishSelect = document.getElementById('publish-release-select');
+      const publishBtn = document.getElementById('publish-release-btn');
+      const publishNote = document.getElementById('publish-note');
+      const publishDecision = document.getElementById('publish-decision-select');
+      const publishFeedback = document.getElementById('publish-feedback');
+      // Benchmark Generation save wiring
+      const bgSaveBtn = document.getElementById('bg-save-btn');
+      const bgSaveFeedback = document.getElementById('bg-save-feedback');
+      const bgName = document.getElementById('bg-name');
+      const bgVersion = document.getElementById('bg-version');
+      const bgSaveMode = document.getElementById('bg-save-mode');
+      const bgDocset = document.getElementById('bg-docset-select');
+      const benchmarkResultsBody = document.getElementById('benchmark-results-body');
+      // Benchmark tab config
+      const benchmarkSelect = document.getElementById('benchmark-select');
+      const benchmarkSampleSize = document.getElementById('benchmark-sample-size');
+      const benchmarkSaveConfigBtn = document.getElementById('benchmark-save-config-btn');
+      const benchmarkConfigFeedback = document.getElementById('benchmark-config-feedback');
+      const benchmarkRunBtn = document.getElementById('benchmark-run-btn');
+      const benchmarkConfigHistoryBody = document.getElementById('benchmark-config-history-body');
+      const evalBenchmarkSelect = document.getElementById('evaluation-benchmark-select');
+      // BG step action buttons + feedback
+      const bgGenerateBtn = document.getElementById('bg-generate-btn');
+      const bgGenerateFeedback = document.getElementById('bg-generate-feedback');
+      const bgCurateBtn = document.getElementById('bg-curate-btn');
+      const bgCurateFeedback = document.getElementById('bg-curate-feedback');
+      const bgValidateBtn = document.getElementById('bg-validate-btn');
+      const bgValidateFeedback = document.getElementById('bg-validate-feedback');
+      const bgAssignBtn = document.getElementById('bg-assign-btn');
+      const bgAssignFeedback = document.getElementById('bg-assign-feedback');
+      const bgDiagnoseBtn = document.getElementById('bg-diagnose-btn');
+      const bgDiagnoseFeedback = document.getElementById('bg-diagnose-feedback');
+
+      function fillOptions(selectEl) {
+        if (!selectEl) return;
+        selectEl.innerHTML = '';
+        Object.keys(releaseData).forEach(k => {
+          const opt = document.createElement('option');
+          opt.value = k; opt.textContent = k; selectEl.appendChild(opt);
+        });
+      }
+
+      function fmtThresh(t) { return `Ev ${t.evidence.toFixed(2)} • Conf ${t.confidence.toFixed(2)} • Ret ${t.retrieval.toFixed(2)}`; }
+      function pct(v) { return Math.max(0, Math.min(100, Math.round(v * 100))); }
+
+      function fmt(v) { return (typeof v === 'number') ? v.toFixed(3) : '—'; }
+      function setLabel(id, text, color) {
+        const el = document.getElementById(id);
+        if (!el) return;
+        el.textContent = text;
+        if (color) el.style.color = color;
+      }
+      function deltaInfo(a, b, higherIsBetter = true) {
+        if (typeof a !== 'number' || typeof b !== 'number') return { txt: '', color: '#5d6c82' };
+        const diff = b - a;
+        const base = Math.abs(a) < 1e-9 ? 0 : (diff / a);
+        const pctStr = `${Math.round(base * 100)}%`;
+        const improved = higherIsBetter ? diff > 0 : diff < 0;
+        const regressed = higherIsBetter ? diff < 0 : diff > 0;
+        const arrow = improved ? '▲' : (regressed ? '▼' : '');
+        const color = improved ? '#2e7d32' : (regressed ? '#c62828' : '#5d6c82');
+        return { txt: arrow ? `(${arrow} ${pctStr})` : `(± 0%)`, color };
+      }
+
+      function setMetricLabels(a, b) {
+        if (!a || !b) return;
+        // IR (higher better)
+        let d = deltaInfo(a.ir.recall10, b.ir.recall10, true);
+        setLabel('label-ir-recall', `A: ${fmt(a.ir.recall10)} | B: ${fmt(b.ir.recall10)} ${d.txt}`, d.color);
+        d = deltaInfo(a.ir.map10, b.ir.map10, true);
+        setLabel('label-ir-map', `A: ${fmt(a.ir.map10)} | B: ${fmt(b.ir.map10)} ${d.txt}`, d.color);
+        d = deltaInfo(a.ir.mrr10, b.ir.mrr10, true);
+        setLabel('label-ir-mrr', `A: ${fmt(a.ir.mrr10)} | B: ${fmt(b.ir.mrr10)} ${d.txt}`, d.color);
+
+        // RePASs (overall/entail/obligation higher better; contradiction lower better)
+        d = deltaInfo(a.repass.overall, b.repass.overall, true);
+        setLabel('label-repass-overall', `A: ${fmt(a.repass.overall)} | B: ${fmt(b.repass.overall)} ${d.txt}`, d.color);
+        d = deltaInfo(a.repass.entailment, b.repass.entailment, true);
+        setLabel('label-repass-entail', `A: ${fmt(a.repass.entailment)} | B: ${fmt(b.repass.entailment)} ${d.txt}`, d.color);
+        d = deltaInfo(a.repass.contradiction, b.repass.contradiction, false);
+        setLabel('label-repass-contr', `A: ${fmt(a.repass.contradiction)} | B: ${fmt(b.repass.contradiction)} ${d.txt}`, d.color);
+        d = deltaInfo(a.repass.obligation, b.repass.obligation, true);
+        setLabel('label-repass-oblg', `A: ${fmt(a.repass.obligation)} | B: ${fmt(b.repass.obligation)} ${d.txt}`, d.color);
+
+        // Human (higher better)
+        d = deltaInfo(a.human.accuracy, b.human.accuracy, true);
+        setLabel('label-human-acc', `A: ${fmt(a.human.accuracy)} | B: ${fmt(b.human.accuracy)} ${d.txt}`, d.color);
+        d = deltaInfo(a.human.completeness, b.human.completeness, true);
+        setLabel('label-human-comp', `A: ${fmt(a.human.completeness)} | B: ${fmt(b.human.completeness)} ${d.txt}`, d.color);
+        d = deltaInfo(a.human.grounding, b.human.grounding, true);
+        setLabel('label-human-grnd', `A: ${fmt(a.human.grounding)} | B: ${fmt(b.human.grounding)} ${d.txt}`, d.color);
+        d = deltaInfo(a.human.readability, b.human.readability, true);
+        setLabel('label-human-read', `A: ${fmt(a.human.readability)} | B: ${fmt(b.human.readability)} ${d.txt}`, d.color);
+        d = deltaInfo(a.human.simplicity, b.human.simplicity, true);
+        setLabel('label-human-simp', `A: ${fmt(a.human.simplicity)} | B: ${fmt(b.human.simplicity)} ${d.txt}`, d.color);
+        d = deltaInfo(a.human.acceptance, b.human.acceptance, true);
+        setLabel('label-human-accp', `A: ${fmt(a.human.acceptance)} | B: ${fmt(b.human.acceptance)} ${d.txt}`, d.color);
+      }
+
+      function getDetailMap(r) {
+        if (!r) return {};
+        return {
+          Release: r.id,
+          'Document Set': r.docset,
+          'Benchmark': r.benchmark,
+          Pipeline: r.pipeline,
+          'IR Method': r.method,
+          LLM: r.llm,
+          Thresholds: fmtThresh(r.thresholds),
+          Traceability: r.trace,
+          Citation: r.citation,
+          Evaluation: r.eval,
+          Recommendation: r.rec,
+        };
+      }
+
+      const detailsBody = document.getElementById('compare-details-body');
+
+      function renderDetails(a, b, aKey, bKey) {
+        if (!detailsBody) return;
+        detailsBody.innerHTML = '';
+        const mapA = getDetailMap(a);
+        const mapB = getDetailMap(b);
+        const fields = [
+          'Release','Document Set','Benchmark','Pipeline','IR Method','LLM','Thresholds','Traceability','Citation','Evaluation','Recommendation'
+        ];
+        fields.forEach(field => {
+          const va = mapA[field] ?? '—';
+          const vb = mapB[field] ?? '—';
+          const isDiff = String(va) !== String(vb);
+          const tr = document.createElement('tr');
+          if (isDiff) tr.classList.add('row-changed');
+          const th = document.createElement('th'); th.textContent = field; tr.appendChild(th);
+          const tdA = document.createElement('td');
+          const tdB = document.createElement('td');
+          if (field === 'Release') {
+            const selA = document.createElement('select'); selA.className = 'select'; selA.id = 'release-compare-a';
+            const selB = document.createElement('select'); selB.className = 'select'; selB.id = 'release-compare-b';
+            // fill options
+            Object.keys(releaseData).forEach(k => {
+              const oa = document.createElement('option'); oa.value = k; oa.textContent = k; selA.appendChild(oa);
+              const ob = document.createElement('option'); ob.value = k; ob.textContent = k; selB.appendChild(ob);
+            });
+            if (aKey) selA.value = aKey; if (bKey) selB.value = bKey;
+            selA.addEventListener('change', () => { currentAKey = selA.value; updateComparison(); });
+            selB.addEventListener('change', () => { currentBKey = selB.value; updateComparison(); });
+            tdA.appendChild(selA);
+            tdB.appendChild(selB);
+          } else {
+            tdA.textContent = va; tdB.textContent = vb;
+          }
+          tr.appendChild(tdA);
+          tr.appendChild(tdB);
+          detailsBody.appendChild(tr);
+        });
+      }
+
+      function setBars(suffix, r) {
+        if (!r) return;
+        const setW = (id, val) => { const el = document.getElementById(id); if (el) el.style.width = pct(val) + '%'; };
+        setW(`bar-ir-recall-${suffix}`, r.ir.recall10);
+        setW(`bar-ir-map-${suffix}`, r.ir.map10);
+        setW(`bar-ir-mrr-${suffix}`, r.ir.mrr10);
+        setW(`bar-repass-overall-${suffix}`, r.repass.overall);
+        setW(`bar-repass-entail-${suffix}`, r.repass.entailment);
+        setW(`bar-repass-contr-${suffix}`, r.repass.contradiction);
+        setW(`bar-repass-oblg-${suffix}`, r.repass.obligation);
+        setW(`bar-human-acc-${suffix}`, r.human.accuracy);
+        setW(`bar-human-comp-${suffix}`, r.human.completeness);
+        setW(`bar-human-grnd-${suffix}`, r.human.grounding);
+        setW(`bar-human-read-${suffix}`, r.human.readability);
+        setW(`bar-human-simp-${suffix}`, r.human.simplicity);
+        setW(`bar-human-accp-${suffix}`, r.human.acceptance);
+      }
+
+      function initReleaseComparison() {
+        // Fill publish select; comparison selects are rendered inside the table
+        fillOptions(publishSelect);
+        updateComparison();
+      }
+
+      function updateComparison() {
+        const selA = document.getElementById('release-compare-a');
+        const selB = document.getElementById('release-compare-b');
+        const aKey = selA ? selA.value : currentAKey;
+        const bKey = selB ? selB.value : currentBKey;
+        const a = aKey ? releaseData[aKey] : undefined;
+        const b = bKey ? releaseData[bKey] : undefined;
+        renderDetails(a, b, aKey, bKey);
+        if (a) setBars('a', a);
+        if (b) setBars('b', b);
+        if (a && b) setMetricLabels(a, b);
+      }
+
+      // listeners are attached to the dynamically created selects in renderDetails
+      
+
+      publishBtn?.addEventListener('click', (e) => {
+        e.preventDefault();
+        const toPublish = publishSelect?.value;
+        const decision = publishDecision?.value || 'Publish';
+        const note = (publishNote?.value || '').trim();
+        if (!toPublish) return;
+        if (publishFeedback) publishFeedback.textContent = `${decision} decision recorded for ${toPublish}${note ? ' — ' + note : ''}.`;
+      });
+
+      function saveBenchmarkEntry() {
+        const name = (bgName?.value || '').trim();
+        const version = (bgVersion?.value || '').trim();
+        const mode = (bgSaveMode?.value || '').trim();
+        const docset = (bgDocset?.value || '').trim() || '—';
+        if (!name || !version) {
+          if (bgSaveFeedback) bgSaveFeedback.textContent = 'Please provide Benchmark Name and Version.';
+          return;
+        }
+        const now = new Date();
+        const y = now.getFullYear();
+        const m = String(now.getMonth() + 1).padStart(2, '0');
+        const d = String(now.getDate()).padStart(2, '0');
+        const runId = `BM-SAVE-${y}${m}${d}-${Math.floor(Math.random()*90+10)}`;
+        const statusLabel = mode.includes('approved') ? 'Approved' : mode.includes('candidate') ? 'Candidate' : mode.includes('version') ? 'Versioned' : 'Draft';
+        const dateLabel = `${d} ${now.toLocaleString('en-US', { month: 'short' })} ${y}`;
+
+        if (benchmarkResultsBody) {
+          const tr = document.createElement('tr');
+          tr.innerHTML = `<td>${runId}</td><td>${name}</td><td>${docset}</td><td>—</td><td>—</td><td>—</td><td>—</td><td><span class="status">${statusLabel}</span></td><td>${dateLabel}</td>`;
+          benchmarkResultsBody.prepend(tr);
+        }
+        if (bgSaveFeedback) bgSaveFeedback.textContent = `Saved "${name} ${version}" as ${mode}.`;
+        ensureEvalBenchmarkOption(`${name} ${version}`);
+        try {
+          const raw = localStorage.getItem(SAVED_BENCHMARKS_KEY);
+          const arr = raw ? JSON.parse(raw) : [];
+          arr.unshift({ runId, name, version, docset, status: statusLabel, date: now.toISOString() });
+          localStorage.setItem(SAVED_BENCHMARKS_KEY, JSON.stringify(arr.slice(0, 500)));
+        } catch {}
+      }
+
+      bgSaveBtn?.addEventListener('click', (e) => {
+        e.preventDefault();
+        saveBenchmarkEntry();
+      });
+
+      // Helpers for simple feedback stamps
+      function timeStamp() {
+        const now = new Date();
+        const y = now.getFullYear();
+        const m = now.toLocaleString('en-US', { month: 'short' });
+        const d = String(now.getDate()).padStart(2, '0');
+        const t = now.toLocaleTimeString('en-US', { hour: '2-digit', minute: '2-digit' });
+        return `${d} ${m} ${y} ${t}`;
+      }
+
+      // Wire BG step buttons with lightweight feedback
+      bgGenerateBtn?.addEventListener('click', (e) => {
+        e.preventDefault();
+        if (bgGenerateFeedback) bgGenerateFeedback.textContent = `Generation requested • ${timeStamp()}`;
+      });
+      bgCurateBtn?.addEventListener('click', (e) => {
+        e.preventDefault();
+        if (bgCurateFeedback) bgCurateFeedback.textContent = `Curation started • ${timeStamp()}`;
+      });
+      bgValidateBtn?.addEventListener('click', (e) => {
+        e.preventDefault();
+        if (bgValidateFeedback) bgValidateFeedback.textContent = `Validation started • ${timeStamp()}`;
+      });
+      bgAssignBtn?.addEventListener('click', (e) => {
+        e.preventDefault();
+        if (bgAssignFeedback) bgAssignFeedback.textContent = `Expert assignment queued • ${timeStamp()}`;
+      });
+      bgDiagnoseBtn?.addEventListener('click', (e) => {
+        e.preventDefault();
+        if (bgDiagnoseFeedback) bgDiagnoseFeedback.textContent = `Diagnosis started • ${timeStamp()}`;
+      });
+
+      const evAssignBtn = document.getElementById('ev-assign-btn');
+      const evAssignFeedback = document.getElementById('ev-assign-feedback');
+      evAssignBtn?.addEventListener('click', (e) => {
+        e.preventDefault();
+        if (evAssignFeedback) evAssignFeedback.textContent = `Expert review assigned • ${timeStamp()}`;
+      });
+
+      // Persist and restore Benchmark tab selections
+      const BENCHMARK_CFG_KEY = 'askregula.benchmark.config.v1';
+      const BENCHMARK_HISTORY_KEY = 'askregula.benchmark.configHistory.v1';
+      const SAVED_BENCHMARKS_KEY = 'askregula.benchmark.savedEntries.v1';
+      function ensureEvalBenchmarkOption(label) {
+        if (!evalBenchmarkSelect || !label) return;
+        const exists = Array.from(evalBenchmarkSelect.options).some(o => (o.textContent || '').trim() === label.trim());
+        if (!exists) {
+          const opt = document.createElement('option');
+          opt.textContent = label;
+          evalBenchmarkSelect.appendChild(opt);
+        }
+        evalBenchmarkSelect.value = label;
+      }
+      function benchLabelFromText(t) {
+        const txt = (t || '').trim();
+        if (/full/i.test(txt)) return 'Full Benchmark';
+        if (/sample/i.test(txt)) return 'Sample Benchmark';
+        return txt || 'Custom Benchmark';
+      }
+      function saveBenchmarkConfig() {
+        const cfg = {
+          benchmark: (benchmarkSelect?.value || '').trim(),
+          sampleSize: (benchmarkSampleSize?.value || '').trim(),
+          savedAt: new Date().toISOString(),
+        };
+        try {
+          localStorage.setItem(BENCHMARK_CFG_KEY, JSON.stringify(cfg));
+          if (benchmarkConfigFeedback) benchmarkConfigFeedback.textContent = `Saved benchmark config${cfg.sampleSize ? ` (${cfg.sampleSize} q)` : ''}.`;
+          addBenchmarkConfigHistory(cfg);
+          const benchText = benchLabelFromText(benchmarkSelect?.options[benchmarkSelect.selectedIndex]?.textContent);
+          const label = cfg.sampleSize ? `${benchText} (${cfg.sampleSize} q)` : benchText;
+          ensureEvalBenchmarkOption(label);
+        } catch (err) {
+          if (benchmarkConfigFeedback) benchmarkConfigFeedback.textContent = 'Unable to save benchmark configuration.';
+        }
+      }
+      function loadBenchmarkConfig() {
+        try {
+          const raw = localStorage.getItem(BENCHMARK_CFG_KEY);
+          if (!raw) return;
+          const cfg = JSON.parse(raw);
+          if (benchmarkSelect && cfg.benchmark) benchmarkSelect.value = cfg.benchmark;
+          if (benchmarkSampleSize && cfg.sampleSize) benchmarkSampleSize.value = cfg.sampleSize;
+        } catch {}
+      }
+      function addBenchmarkConfigHistory(entry) {
+        try {
+          const raw = localStorage.getItem(BENCHMARK_HISTORY_KEY);
+          const arr = raw ? JSON.parse(raw) : [];
+          arr.unshift(entry);
+          localStorage.setItem(BENCHMARK_HISTORY_KEY, JSON.stringify(arr.slice(0, 100)));
+          renderBenchmarkConfigHistory(arr);
+        } catch {}
+      }
+      function renderBenchmarkConfigHistory(arr) {
+        if (!benchmarkConfigHistoryBody) return;
+        benchmarkConfigHistoryBody.innerHTML = '';
+        (arr || []).forEach(item => {
+          const ts = item.savedAt ? new Date(item.savedAt) : new Date();
+          const dateLabel = `${String(ts.getDate()).padStart(2,'0')} ${ts.toLocaleString('en-US',{month:'short'})} ${ts.getFullYear()} ${ts.toLocaleTimeString('en-US',{hour:'2-digit',minute:'2-digit'})}`;
+          const tr = document.createElement('tr');
+          tr.innerHTML = `<td>${dateLabel}</td><td>${item.benchmark || '—'}</td><td>${item.sampleSize || '—'}</td>`;
+          benchmarkConfigHistoryBody.appendChild(tr);
+        });
+      }
+      function loadBenchmarkConfigHistory() {
+        try {
+          const raw = localStorage.getItem(BENCHMARK_HISTORY_KEY);
+          const arr = raw ? JSON.parse(raw) : [];
+          renderBenchmarkConfigHistory(arr);
+          // Also surface saved configs into Pipeline Question Set
+          arr.forEach(item => {
+            const benchText = benchLabelFromText(item.benchmark);
+            const label = item.sampleSize ? `${benchText} (${item.sampleSize} q)` : benchText;
+            ensureEvalBenchmarkOption(label);
+          });
+        } catch {}
+      }
+      function clearSavedBenchmarkRows() {
+        if (!benchmarkResultsBody) return;
+        const rows = Array.from(benchmarkResultsBody.querySelectorAll('tr'));
+        rows.forEach(r => {
+          const idCell = r.querySelector('td');
+          const idText = (idCell?.textContent || '').trim();
+          if (idText.startsWith('BM-SAVE-')) {
+            r.remove();
+          }
+        });
+      }
+      function loadSavedBenchmarkEntries() {
+        try {
+          const raw = localStorage.getItem(SAVED_BENCHMARKS_KEY);
+          const arr = raw ? JSON.parse(raw) : [];
+          if (!benchmarkResultsBody || !Array.isArray(arr) || !arr.length) return;
+          clearSavedBenchmarkRows();
+          arr.slice(0, 200).forEach(item => {
+            const ts = item.date ? new Date(item.date) : new Date();
+            const dateLabel = `${String(ts.getDate()).padStart(2,'0')} ${ts.toLocaleString('en-US',{month:'short'})} ${ts.getFullYear()}`;
+            const tr = document.createElement('tr');
+            tr.innerHTML = `<td>${item.runId}</td><td>${item.name || '—'}</td><td>${item.docset || '—'}</td><td>—</td><td>—</td><td>—</td><td>—</td><td><span class=\"status\">${item.status || 'Draft'}</span></td><td>${dateLabel}</td>`;
+            benchmarkResultsBody.prepend(tr);
+          });
+        } catch {}
+      }
+      function runBenchmark() {
+        const benchText = (function(){
+          const t = (benchmarkSelect?.options[benchmarkSelect.selectedIndex]?.textContent || '').trim();
+          if (/full/i.test(t)) return 'Full';
+          if (/sample/i.test(t)) return 'Sample';
+          return t || '—';
+        })();
+        const docsetEl = document.getElementById('evaluation-summary-document-set');
+        const methodEl = document.getElementById('linked-method-version');
+        const docset = (docsetEl?.textContent || '—').trim();
+        const method = (methodEl?.textContent || '—').trim();
+        const now = new Date();
+        const y = now.getFullYear().toString().slice(-2);
+        const m = String(now.getMonth()+1).padStart(2,'0');
+        const d = String(now.getDate()).padStart(2,'0');
+        const runId = `BM-${y}${m}${d}-${Math.floor(Math.random()*90+10)}`;
+        const dateLabel = `${d} ${now.toLocaleString('en-US',{month:'short'})} ${now.getFullYear()}`;
+        if (benchmarkResultsBody) {
+          const tr = document.createElement('tr');
+          tr.innerHTML = `<td>${runId}</td><td>${benchText}</td><td>${docset}</td><td>${method}</td><td>—</td><td>—</td><td>—</td><td><span class="status status--pending">Queued</span></td><td>${dateLabel}</td>`;
+          benchmarkResultsBody.prepend(tr);
+        }
+      }
+      benchmarkRunBtn?.addEventListener('click', (e) => {
+        e.preventDefault();
+        runBenchmark();
+      });
+      benchmarkSaveConfigBtn?.addEventListener('click', (e) => {
+        e.preventDefault();
+        saveBenchmarkConfig();
+      });
+
+      initReleaseComparison();
+      loadBenchmarkConfig();
+      loadBenchmarkConfigHistory();
+      loadSavedBenchmarkEntries();
+
+      function syncEvaluationSummaryDocumentSet() {
+        const pipelineDocumentSetSelect = document.getElementById('pipeline-document-set-select');
+        if (!pipelineDocumentSetSelect || !evaluationSummaryDocumentSet) return;
+        evaluationSummaryDocumentSet.textContent = pipelineDocumentSetSelect.value;
+      }
+
+      function addDocumentSetVersionToPipeline() {
+        const rawValue = documentSetVersionInput?.value || '';
+        const newVersion = rawValue.trim();
+        if (!newVersion) {
+          documentSetVersionInput?.focus();
+          return;
+        }
+
+        pipelineDocumentSetSelects.forEach(select => {
+          const hasOption = Array.from(select.options).some(option => option.value === newVersion);
+          if (!hasOption) {
+            const option = document.createElement('option');
+            option.value = newVersion;
+            option.textContent = newVersion;
+            select.appendChild(option);
+          }
+          select.value = newVersion;
+        });
+
+        activateTab('runs');
+        syncEvaluationSummaryDocumentSet();
+      }
+
+      pipelineDocumentSetSelects.forEach(select => {
+        select.addEventListener('change', syncEvaluationSummaryDocumentSet);
+      });
+
+      syncEvaluationSummaryDocumentSet();
+
+      createDocumentSetVersionBtn?.addEventListener('click', addDocumentSetVersionToPipeline);
+      documentSetVersionInput?.addEventListener('keydown', (e) => {
+        if (e.key === 'Enter') {
+          e.preventDefault();
+          addDocumentSetVersionToPipeline();
+        }
+      });
+
+      // Sync Corpus docset selection into Pipeline docset(s)
+      bgDocset?.addEventListener('change', () => {
+        const val = (bgDocset?.value || '').trim();
+        if (!val) return;
+        pipelineDocumentSetSelects.forEach(select => {
+          const hasOption = Array.from(select.options).some(o => (o.value || o.textContent) === val);
+          if (!hasOption) {
+            const opt = document.createElement('option');
+            opt.value = val; opt.textContent = val; select.appendChild(opt);
+          }
+          select.value = val;
+        });
+        syncEvaluationSummaryDocumentSet();
+      });
+
+      function syncMethodVersion() {
+        if (!linkedMethodVersionCell) return;
+        const val = (methodVersionInput?.value || '').trim();
+        linkedMethodVersionCell.textContent = val || 'METH-RAG-v1.3';
+      }
+
+      methodVersionInput?.addEventListener('input', syncMethodVersion);
+      methodVersionInput?.addEventListener('change', syncMethodVersion);
+      syncMethodVersion();
+
+      function syncPipelineVersion() {
+        if (!linkedPipelineVersionCell) return;
+        const val = (pipelineVersionInput?.value || '').trim();
+        linkedPipelineVersionCell.textContent = val || 'PIPE-RAG-v1.3';
+      }
+
+      pipelineVersionInput?.addEventListener('input', syncPipelineVersion);
+      pipelineVersionInput?.addEventListener('change', syncPipelineVersion);
+      syncPipelineVersion();
+
+      function getSelectedText(selectEl) {
+        if (!selectEl) return '';
+        const opt = selectEl.options[selectEl.selectedIndex];
+        return (opt?.textContent || '').trim();
+      }
+
+      function syncMethodConfigSummary() {
+        if (csLLM) csLLM.textContent = getSelectedText(mcLLM) || csLLM.textContent;
+        if (csEmbedding) csEmbedding.textContent = getSelectedText(mcEmbedding) || csEmbedding.textContent;
+        if (csReranker) csReranker.textContent = getSelectedText(mcReranker) || csReranker.textContent;
+        if (csAnswer) csAnswer.textContent = getSelectedText(mcAnswer) || csAnswer.textContent;
+        if (csTrace) csTrace.textContent = getSelectedText(mcTrace) || csTrace.textContent;
+        const retrievalMethod = getSelectedText(mcRetrieval) || '';
+        const topk = (mcTopK?.value || '').trim();
+        if (csRetrieval) csRetrieval.textContent = retrievalMethod && topk ? `${retrievalMethod} • Top-k ${topk}` : csRetrieval.textContent;
+        if (csEvThresh && mcEvThresh) csEvThresh.textContent = mcEvThresh.value;
+        if (csConfThresh && mcConfThresh) csConfThresh.textContent = mcConfThresh.value;
+        if (csRetThresh && mcRetThresh) csRetThresh.textContent = mcRetThresh.value;
+      }
+
+      [mcLLM, mcEmbedding, mcReranker, mcAnswer, mcTrace, mcRetrieval].forEach(el => {
+        el?.addEventListener('change', syncMethodConfigSummary);
+      });
+      [mcTopK, mcEvThresh, mcConfThresh, mcRetThresh].forEach(el => {
+        el?.addEventListener('input', syncMethodConfigSummary);
+        el?.addEventListener('change', syncMethodConfigSummary);
+      });
+      syncMethodConfigSummary();
+
+      function syncEvaluationSummaryDetails() {
+        if (esMethod) esMethod.textContent = getSelectedText(evalMethod) || esMethod.textContent;
+        const cov = (evalCoverage?.value || '').trim();
+        const evg = (evalEvidence?.value || '').trim();
+        const tra = (evalTraceability?.value || '').trim();
+        const cri = (evalCritical?.value || '').trim();
+        if (esCoverage && cov) esCoverage.textContent = `≥ ${cov}%`;
+        if (esEvidence && evg) esEvidence.textContent = `≥ ${evg}%`;
+        if (esTraceability && tra) esTraceability.textContent = `≥ ${tra}%`;
+        if (esCritical && cri !== '') esCritical.textContent = `= ${cri}`;
+        const bench = getSelectedText(evalBenchmark);
+        const size = (evalSampleSize?.value || '').trim();
+        if (esQuestionSet && bench) {
+          const label = bench.replace(/\s*Benchmark\s*$/i, '').trim();
+          esQuestionSet.textContent = size ? `${label} (${size} q)` : label;
+        }
+      }
+
+      [evalMethod, evalBenchmark].forEach(el => el?.addEventListener('change', syncEvaluationSummaryDetails));
+      [evalCoverage, evalEvidence, evalTraceability, evalCritical, evalSampleSize].forEach(el => {
+        el?.addEventListener('input', syncEvaluationSummaryDetails);
+        el?.addEventListener('change', syncEvaluationSummaryDetails);
+      });
+      syncEvaluationSummaryDetails();
+
+      function daysSince(iso) {
+        const d = new Date(iso);
+        if (isNaN(d.getTime())) return '';
+        const now = new Date();
+        const diff = Math.floor((now - d) / (1000 * 60 * 60 * 24));
+        return `${diff} day${diff === 1 ? '' : 's'} live`;
+      }
+
+      function updateSummaryStrip() {
+        const activeCard = document.getElementById('summary-card-active');
+        const verEl = document.getElementById('summary-active-version');
+        const daysEl = document.getElementById('summary-active-days');
+        if (verEl) verEl.textContent = currentAKey || verEl.textContent;
+        const since = activeCard?.getAttribute('data-active-since');
+        if (since && daysEl) daysEl.textContent = daysSince(since);
+
+        const corpusPanel = document.getElementById('panel-corpus');
+        if (corpusPanel) {
+          const approved = corpusPanel.querySelectorAll('span.status.status--active').length;
+          const pending = corpusPanel.querySelectorAll('span.status--review').length;
+          const apprEl = document.getElementById('summary-docs-approved');
+          const pendEl = document.getElementById('summary-docs-pending');
+          if (apprEl) apprEl.textContent = String(approved || 0);
+          if (pendEl) pendEl.textContent = String(pending || 0);
+        }
+
+        const benchCard = document.getElementById('summary-card-benchmark');
+        const benchLabelEl = document.getElementById('summary-benchmark-label');
+        const fixedBench = benchCard?.getAttribute('data-benchmark-id');
+        if (benchLabelEl) {
+          if (fixedBench) {
+            benchLabelEl.textContent = fixedBench;
+          } else {
+            const benchText = benchLabelFromText(benchmarkSelect?.options[benchmarkSelect.selectedIndex]?.textContent);
+            const size = (benchmarkSampleSize?.value || '').trim();
+            benchLabelEl.textContent = size ? `${benchText} (${size} q)` : benchText || '—';
+          }
+        }
+        const benchMetaEl = document.getElementById('summary-benchmark-meta');
+        if (benchMetaEl) {
+          const ds = (bgDocset?.value || 'CORP-FIN-2026-03').trim();
+          benchMetaEl.textContent = `Document Set Version: ${ds}`;
+        }
+
+        const pipeEl = document.getElementById('summary-pipeline-version');
+        if (pipeEl) {
+          const val = (linkedPipelineVersionCell?.textContent || 'PIPE-RAG-v1.3').trim();
+          pipeEl.textContent = val || 'PIPE-RAG-v1.3';
+        }
+        const pipeMetaEl = document.getElementById('summary-pipeline-meta');
+        if (pipeMetaEl) {
+          const aKey = currentAKey;
+          const r = aKey ? releaseData[aKey] : undefined;
+          if (r?.eval) pipeMetaEl.textContent = `Evaluation Version: ${r.eval}`;
+        }
+      }
+
+      updateSummaryStrip();
+      benchmarkSelect?.addEventListener('change', updateSummaryStrip);
+      benchmarkSampleSize?.addEventListener('input', updateSummaryStrip);
+      pipelineVersionInput?.addEventListener('input', updateSummaryStrip);
+      pipelineVersionInput?.addEventListener('change', updateSummaryStrip);
+      bgDocset?.addEventListener('change', updateSummaryStrip);
+    }
+
+    (async () => {
+      await loadIncludes();
+      initAdminConsole();
+    })();
+  </script>
+</body>
+</html>

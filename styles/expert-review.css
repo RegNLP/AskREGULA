@@ -1,0 +1,513 @@
+/* =====================================================
+   Expert Review Console — Stylesheet
+   /styles/expert-review.css
+   ===================================================== */
+
+:root {
+  --bg: #f3f5f9;
+  --panel: #ffffff;
+  --panel-soft: #f8f9fc;
+  --border: #d9e0ea;
+  --text: #1f2937;
+  --text-soft: #5b6472;
+  --accent: #2563eb;
+  --accent-soft: #e8f0ff;
+  --success: #16a34a;
+  --warning: #d97706;
+  --danger: #dc2626;
+  --radius: 14px;
+  --shadow: 0 10px 24px rgba(15, 23, 42, 0.06);
+  --annotation-panel-h: 300px;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html,
+body {
+  height: 100%;
+  margin: 0;
+  font-family: Inter, Arial, sans-serif;
+  background: var(--bg);
+  color: var(--text);
+}
+
+/* ── App shell ── */
+.app-shell {
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
+/* ── Topbar ── */
+.topbar {
+  flex: 0 0 auto;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 10px 16px;
+  background: #fff;
+  border-bottom: 1px solid var(--border);
+}
+
+.brand {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.brand-logo {
+  width: 34px;
+  height: auto;
+  display: block;
+}
+
+.topbar-left h1 {
+  margin: 0;
+  font-size: 1.05rem;
+  font-weight: 700;
+}
+
+.topbar-left p {
+  margin: 2px 0 0;
+  color: var(--text-soft);
+  font-size: 0.82rem;
+}
+
+.topbar-right {
+  display: flex;
+  gap: 8px;
+  align-items: center;
+  flex-wrap: wrap;
+  justify-content: flex-end;
+  max-width: 58%;
+}
+
+/* ── Pills ── */
+.pill {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  border: 1px solid var(--border);
+  border-radius: 999px;
+  padding: 5px 10px;
+  background: #fff;
+  font-size: 0.78rem;
+  color: var(--text-soft);
+  white-space: nowrap;
+}
+
+.pill.accent {
+  color: #1e4ed8;
+  background: var(--accent-soft);
+  border-color: #cfe0ff;
+}
+
+.pill.progress {
+  font-weight: 700;
+  color: #123a63;
+  background: #eef4ff;
+  border-color: #cfe0ff;
+}
+
+.pill-dot {
+  width: 7px;
+  height: 7px;
+  border-radius: 999px;
+  background: #1e4ed8;
+}
+
+/* ── Buttons ── */
+.btn {
+  border: 1px solid var(--border);
+  background: #fff;
+  color: var(--text);
+  border-radius: 8px;
+  padding: 8px 12px;
+  font-size: 0.84rem;
+  cursor: pointer;
+}
+
+.btn.primary {
+  background: var(--accent);
+  border-color: var(--accent);
+  color: #fff;
+}
+
+/* ── App frame & review grid ── */
+.app-frame {
+  flex: 1;
+  min-height: 0;
+  overflow: hidden;
+  padding: 12px;
+}
+
+.review-grid {
+  display: grid;
+  grid-template-columns: 70% 30%;
+  grid-template-rows: minmax(0, 1fr) var(--annotation-panel-h);
+  grid-template-areas:
+    "item sources"
+    "annotations sources";
+  height: 100%;
+  min-height: 0;
+  gap: 10px;
+}
+
+/* ── Panels ── */
+.main {
+  grid-area: item;
+  min-height: 0;
+  overflow-y: auto;
+  background: var(--panel);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  box-shadow: var(--shadow);
+  padding: 12px;
+}
+
+.sources-panel {
+  grid-area: sources;
+  min-height: 0;
+  overflow-y: auto;
+  background: linear-gradient(180deg, #f8f9fe 0%, #f4f7fb 100%);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  box-shadow: var(--shadow);
+  padding: 12px;
+}
+
+/* ── Review / Annotation drawer ── */
+.review-drawer {
+  grid-area: annotations;
+  height: var(--annotation-panel-h);
+  max-height: var(--annotation-panel-h);
+  min-height: 0;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  background: #ffffff;
+  border: 1px solid #d7e2ee;
+  border-radius: var(--radius);
+  box-shadow: 0 10px 24px rgba(15, 23, 42, 0.08);
+  padding: 10px;
+}
+
+.review-drawer .section-title { color: #1f2937; }
+
+.review-drawer .annotation-row {
+  background: #f8fafc;
+  border: 1px solid #dbe5f0;
+  box-shadow: none;
+}
+
+.review-drawer .row-label { color: #334155; }
+
+.review-drawer .annotation-panel label { color: #475569; }
+
+.review-drawer .annotation-panel textarea {
+  background: #ffffff;
+  border: 1px solid #d7e2ee;
+  color: #0f172a;
+}
+
+.review-drawer .annotation-actions { border-top: 1px solid #e2e8f0; }
+
+.review-drawer .btn {
+  border-color: #cbd5e1;
+  background: #f8fafc;
+  color: #334155;
+  box-shadow: 0 1px 2px rgba(15, 23, 42, 0.06);
+}
+
+.review-drawer .btn.primary {
+  background: linear-gradient(135deg, #123a63, #165288);
+  border-color: #123a63;
+  color: #ffffff;
+  box-shadow: 0 8px 18px rgba(18, 58, 99, 0.22);
+}
+
+/* ── Rating chips inside drawer ── */
+.review-drawer .rating-group label {
+  border-color: #cbd5e1;
+  color: #334155;
+}
+
+.review-drawer .rating-group label:hover {
+  background: #f1f5f9;
+  border-color: #94a3b8;
+}
+
+.review-drawer .rating-group input:checked + label {
+  background: #e8f0ff;
+  border-color: #7aa6e8;
+  color: #123a63;
+}
+
+/* ── Typography ── */
+.section-title {
+  margin: 0 0 4px;
+  font-size: 0.94rem;
+  font-weight: 700;
+}
+
+.section-subtitle {
+  margin: 0 0 9px;
+  color: var(--text-soft);
+  font-size: 0.82rem;
+  line-height: 1.45;
+}
+
+/* ── Item meta row ── */
+.item-meta-row {
+  display: flex;
+  flex-wrap: nowrap;
+  align-items: center;
+  gap: 12px;
+  overflow-x: auto;
+  padding: 8px 10px;
+  margin-bottom: 10px;
+  border: 1px solid var(--border);
+  border-radius: 10px;
+  background: var(--panel-soft);
+  font-size: 0.84rem;
+}
+
+.item-meta-row span { white-space: nowrap; }
+
+.item-meta-row strong {
+  color: var(--text-soft);
+  font-weight: 600;
+  margin-right: 6px;
+}
+
+/* ── Content cards ── */
+.content-card {
+  background: #fff;
+  border: 1px solid var(--border);
+  border-radius: 10px;
+  padding: 12px;
+  margin-bottom: 10px;
+}
+
+.content-card h3 {
+  margin: 0 0 8px;
+  font-size: 0.9rem;
+  font-weight: 700;
+}
+
+.content-card p {
+  margin: 0;
+  line-height: 1.52;
+  color: var(--text);
+  font-size: 0.87rem;
+}
+
+.bullet-list {
+  margin: 0;
+  padding-left: 18px;
+  color: var(--text);
+  line-height: 1.48;
+  font-size: 0.87rem;
+}
+
+.bullet-list li + li { margin-top: 6px; }
+
+/* ── Source cards ── */
+.source-card {
+  border: 1px solid var(--border);
+  border-radius: 10px;
+  background: #fff;
+  padding: 10px;
+  margin-bottom: 9px;
+}
+
+.source-card h4 {
+  margin: 0 0 4px;
+  font-size: 0.86rem;
+  font-weight: 700;
+}
+
+.source-meta {
+  font-size: 0.74rem;
+  color: var(--text-soft);
+  margin-bottom: 6px;
+}
+
+.source-card p {
+  margin: 0 0 6px;
+  font-size: 0.82rem;
+  line-height: 1.42;
+  color: var(--text);
+}
+
+.supports {
+  font-size: 0.78rem;
+  color: var(--text-soft);
+  background: #f7f9fc;
+  border: 1px solid var(--border);
+  border-radius: 8px;
+  padding: 7px 8px;
+}
+
+/* ── Annotation rows & rating groups ── */
+.annotation-row {
+  display: grid;
+  grid-template-columns: 120px 1fr;
+  gap: 8px;
+  align-items: center;
+  background: #fff;
+  border: 1px solid var(--border);
+  border-radius: 8px;
+  padding: 6px 8px;
+}
+
+.row-label {
+  font-size: 0.82rem;
+  font-weight: 600;
+  color: var(--text-soft);
+  white-space: nowrap;
+}
+
+.rating-group {
+  display: inline-flex;
+  gap: 6px;
+  flex-wrap: wrap;
+  align-items: center;
+}
+
+.rating-group input { display: none; }
+
+.rating-group label {
+  min-width: 28px;
+  height: 28px;
+  padding: 0 8px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  border: 1px solid var(--border);
+  border-radius: 6px;
+  font-size: 0.82rem;
+  color: var(--text-soft);
+  background: #fff;
+  cursor: pointer;
+  user-select: none;
+}
+
+.rating-group label:hover {
+  background: #f5f8ff;
+  border-color: #bfd3ff;
+}
+
+.rating-group input:checked + label {
+  background: var(--accent-soft);
+  border-color: #a9c4ff;
+  color: #1e4ed8;
+  font-weight: 700;
+}
+
+/* ── Annotation panel layout ── */
+.annotation-panel textarea,
+.annotation-actions select {
+  width: 100%;
+  border: 1px solid var(--border);
+  border-radius: 8px;
+  padding: 7px 8px;
+  font-size: 0.87rem;
+  background: #fff;
+  color: var(--text);
+}
+
+.annotation-layout {
+  display: grid;
+  grid-template-columns: 0.62fr 1.78fr;
+  gap: 10px;
+  margin-bottom: 8px;
+  flex: 1 1 auto;
+  min-height: 0;
+}
+
+.annotation-left {
+  display: grid;
+  gap: 0px;
+  align-content: start;
+}
+
+.annotation-notes { min-height: 0; }
+
+.annotation-notes.annotation-panel {
+  display: flex;
+  flex-direction: column;
+  min-height: 0;
+}
+
+.annotation-panel {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 8px;
+}
+
+.annotation-panel label {
+  display: block;
+  font-size: 0.84rem;
+  font-weight: 600;
+  color: var(--text-soft);
+  margin-bottom: 4px;
+}
+
+.annotation-panel textarea {
+  min-height: 0;
+  resize: none;
+  line-height: 1.42;
+  font-family: inherit;
+}
+
+.annotation-notes > div:first-child {
+  flex: 1 1 auto;
+  display: flex;
+  flex-direction: column;
+  min-height: 0;
+}
+
+.annotation-notes textarea {
+  flex: 1 1 auto;
+  height: 100%;
+  min-height: 0;
+}
+
+/* ── Annotation actions ── */
+.annotation-actions {
+  display: grid;
+  grid-template-columns: auto auto;
+  gap: 8px;
+  align-items: end;
+  justify-content: end;
+  padding-top: 6px;
+  margin-top: auto;
+  border-top: 1px solid #e6ecf4;
+}
+
+.annotation-actions .btn { height: 34px; }
+
+/* ── Responsive breakpoints ── */
+@media (max-width: 1200px) {
+  .review-grid {
+    grid-template-columns: 1fr;
+    grid-template-rows: auto auto auto;
+    grid-template-areas:
+      "item"
+      "annotations"
+      "sources";
+  }
+
+  .annotation-layout { grid-template-columns: 1fr; }
+
+  .annotation-row { grid-template-columns: 120px 1fr; }
+
+  .annotation-actions { grid-template-columns: 1fr; }
+}
+
+@media (max-width: 700px) {
+  .annotation-row { grid-template-columns: 1fr; }
+}

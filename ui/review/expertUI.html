@@ -1,0 +1,246 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Expert Review Console</title>
+  <link rel="stylesheet" href="../../styles/expert-review.css" />
+</head>
+<body>
+  <div class="app-shell">
+    <header class="topbar">
+      <div class="brand">
+        <img class="brand-logo" src="../../images/askregulalogosmall.png" alt="AskRegula" />
+        <div class="topbar-left">
+          <h1>Expert Review Console</h1>
+          <p>Review benchmark items, inspect supporting sources, and record expert annotations.</p>
+        </div>
+      </div>
+      <div class="topbar-right">
+        <span class="pill progress">10 / 25</span>
+        <span class="pill">Reviewer: reviewer01</span>
+        <span class="pill">Assignment: BM-240322-07</span>
+        <span class="pill accent"><span class="pill-dot"></span>In Progress</span>
+        <button class="btn">Previous</button>
+        <button class="btn">Next</button>
+      </div>
+    </header>
+
+    <div class="app-frame">
+      <div class="review-grid">
+
+        <!-- LEFT TOP: ITEM PANEL -->
+        <main class="main">
+          <div class="item-meta-row">
+            <span><strong>Item:</strong> EV-CHK-2026-03-014</span>
+            <span><strong>Document Set:</strong> FIN-Docs-2026-03-R1</span>
+            <span><strong>Pipeline:</strong> PIPE-RAG-v1.3</span>
+            <span><strong>Benchmark:</strong> BM-240322-07</span>
+          </div>
+
+          <section class="content-card">
+            <h3>Question</h3>
+            <p>
+              For a corporate client classified as high risk due to ownership links to a high-risk jurisdiction
+              and an incomplete source-of-funds file, what customer due diligence and escalation steps must the
+              firm complete before onboarding, and how frequently should the relationship be reviewed after approval?
+            </p>
+          </section>
+
+          <section class="content-card">
+            <h3>Summary Key Points</h3>
+            <ul class="bullet-list">
+              <li>High-risk classification requires enhanced due diligence rather than standard due diligence.</li>
+              <li>The firm must identify and verify beneficial ownership using reliable supporting information.</li>
+              <li>Source of funds and, where relevant, source of wealth should be sufficiently evidenced.</li>
+              <li>Where onboarding documentation remains incomplete, the case should be escalated to Compliance.</li>
+              <li>The firm must document the rationale for approval and any additional monitoring conditions.</li>
+              <li>High-risk relationships should normally be reviewed at least annually, or sooner if risk indicators change.</li>
+            </ul>
+          </section>
+
+          <section class="content-card">
+            <h3>Complete Answer</h3>
+            <p>
+              Before onboarding a client classified as high risk, the firm should apply enhanced due diligence rather
+              than relying on standard customer due diligence. This includes identifying and verifying beneficial owners,
+              obtaining sufficiently reliable evidence about source of funds and, where relevant, source of wealth, and
+              documenting the reasons for the high-risk classification together with the additional controls applied.
+              <br><br>
+              Where the onboarding file is incomplete, particularly if material source-of-funds evidence is still missing
+              or ownership arrangements remain insufficiently transparent, the relationship should not proceed through
+              routine approval. Instead, the case should be escalated to Compliance or the relevant internal approval
+              function. The escalation record should clearly explain what information is missing, which risk indicators
+              were identified, and what additional documentation or approval is required before activation.
+              <br><br>
+              If the relationship is ultimately approved, it should remain subject to ongoing monitoring proportionate
+              to the client’s risk profile. For high-risk clients, periodic review should normally occur at least annually,
+              and earlier review may be required where new adverse information appears, ownership structures change,
+              or transactional behaviour raises additional concerns.
+            </p>
+          </section>
+        </main>
+
+        <!-- RIGHT: SOURCE DOCUMENTS PANEL -->
+        <aside class="sources-panel">
+          <h2 class="section-title">Supporting Source Documents</h2>
+          <p class="section-subtitle">
+            Review the retrieved passages used to support the generated answer. This panel has fixed width and independent scrolling.
+          </p>
+
+          <div class="source-card">
+            <h4>S1. AML Rulebook – Enhanced Due Diligence for High-Risk Relationships</h4>
+            <div class="source-meta">AML Rulebook • Section 4.2 • Updated 04 Feb 2026</div>
+            <p>
+              A firm must apply enhanced customer due diligence where a customer, beneficial owner, connected party,
+              or relevant transaction is associated with a jurisdiction or circumstance that presents a higher risk
+              of money laundering or terrorist financing.
+            </p>
+            <div class="supports">
+              Supports the conclusion that standard CDD is insufficient and enhanced due diligence is required.
+            </div>
+          </div>
+
+          <div class="source-card">
+            <h4>S2. Beneficial Ownership and Verification Rules</h4>
+            <div class="source-meta">Ownership Rules • Section 2.7 • Updated 18 Jan 2026</div>
+            <p>
+              A firm must identify the natural persons who ultimately own or control a body corporate and must take
+              reasonable measures to verify that information using reliable and independent documentation, data,
+              or information.
+            </p>
+            <div class="supports">
+              Supports the requirement to verify beneficial ownership and treat opaque ownership structures as a risk factor.
+            </div>
+          </div>
+
+          <div class="source-card">
+            <h4>S3. Source of Funds / Source of Wealth Guidance</h4>
+            <div class="source-meta">Guidance Note • Section 6.1 • Updated 21 Feb 2026</div>
+            <p>
+              Where a customer presents elevated ML/TF risk, the firm should obtain sufficient information to understand
+              the origin of the customer’s funds and, where relevant, the origin of wealth. Where documents are incomplete,
+              inconsistent, or insufficient, the relationship should not be treated as fully onboarded until resolved or escalated.
+            </p>
+            <div class="supports">
+              Supports the conclusion that incomplete source-of-funds evidence is a material issue and may block routine onboarding.
+            </div>
+          </div>
+
+          <div class="source-card">
+            <h4>S4. Internal High-Risk Client Onboarding Policy</h4>
+            <div class="source-meta">Internal Policy • Control 8.3 • Updated 03 Mar 2026</div>
+            <p>
+              Any onboarding involving enhanced due diligence, unresolved risk indicators, or incomplete documentation
+              must be referred to Compliance for review and approval before account activation.
+            </p>
+            <div class="supports">
+              Supports the escalation requirement and the need for Compliance approval before proceeding.
+            </div>
+          </div>
+
+          <div class="source-card">
+            <h4>S5. Ongoing Monitoring and Review Frequency Standard</h4>
+            <div class="source-meta">Monitoring Standard • Section 5.4 • Updated 12 Feb 2026</div>
+            <p>
+              Customer relationships must be subject to ongoing monitoring on a risk-sensitive basis. High-risk customers
+              must be reviewed more frequently than standard-risk customers, and a full review should ordinarily occur at
+              intervals not exceeding 12 months unless a more frequent cycle is justified.
+            </p>
+            <div class="supports">
+              Supports the statement that high-risk relationships should be reviewed at least annually and possibly sooner.
+            </div>
+          </div>
+        </aside>
+
+        <!-- LEFT BOTTOM: ANNOTATION PANEL -->
+        <section class="review-drawer">
+          <h2 class="section-title">Annotation Panel</h2>
+          <div class="annotation-layout">
+            <div class="annotation-left">
+              <div class="annotation-row">
+                <div class="row-label">Accuracy</div>
+                <div class="rating-group">
+                  <input type="radio" id="acc1" name="accuracy" value="1"><label for="acc1">1</label>
+                  <input type="radio" id="acc2" name="accuracy" value="2"><label for="acc2">2</label>
+                  <input type="radio" id="acc3" name="accuracy" value="3"><label for="acc3">3</label>
+                  <input type="radio" id="acc4" name="accuracy" value="4" checked><label for="acc4">4</label>
+                  <input type="radio" id="acc5" name="accuracy" value="5"><label for="acc5">5</label>
+                </div>
+              </div>
+
+              <div class="annotation-row">
+                <div class="row-label">Completeness</div>
+                <div class="rating-group">
+                  <input type="radio" id="comp1" name="completeness" value="1"><label for="comp1">1</label>
+                  <input type="radio" id="comp2" name="completeness" value="2"><label for="comp2">2</label>
+                  <input type="radio" id="comp3" name="completeness" value="3"><label for="comp3">3</label>
+                  <input type="radio" id="comp4" name="completeness" value="4" checked><label for="comp4">4</label>
+                  <input type="radio" id="comp5" name="completeness" value="5"><label for="comp5">5</label>
+                </div>
+              </div>
+
+              <div class="annotation-row">
+                <div class="row-label">Grounding</div>
+                <div class="rating-group">
+                  <input type="radio" id="gr1" name="grounding" value="1"><label for="gr1">1</label>
+                  <input type="radio" id="gr2" name="grounding" value="2"><label for="gr2">2</label>
+                  <input type="radio" id="gr3" name="grounding" value="3"><label for="gr3">3</label>
+                  <input type="radio" id="gr4" name="grounding" value="4"><label for="gr4">4</label>
+                  <input type="radio" id="gr5" name="grounding" value="5" checked><label for="gr5">5</label>
+                </div>
+              </div>
+
+              <div class="annotation-row">
+                <div class="row-label">Readibility</div>
+                <div class="rating-group">
+                  <input type="radio" id="read1" name="readibility" value="1"><label for="read1">1</label>
+                  <input type="radio" id="read2" name="readibility" value="2"><label for="read2">2</label>
+                  <input type="radio" id="read3" name="readibility" value="3"><label for="read3">3</label>
+                  <input type="radio" id="read4" name="readibility" value="4" checked><label for="read4">4</label>
+                  <input type="radio" id="read5" name="readibility" value="5"><label for="read5">5</label>
+                </div>
+              </div>
+
+              <div class="annotation-row">
+                <div class="row-label">Simplicity</div>
+                <div class="rating-group">
+                  <input type="radio" id="simp1" name="simplicity" value="1"><label for="simp1">1</label>
+                  <input type="radio" id="simp2" name="simplicity" value="2"><label for="simp2">2</label>
+                  <input type="radio" id="simp3" name="simplicity" value="3" checked><label for="simp3">3</label>
+                  <input type="radio" id="simp4" name="simplicity" value="4"><label for="simp4">4</label>
+                  <input type="radio" id="simp5" name="simplicity" value="5"><label for="simp5">5</label>
+                </div>
+              </div>
+
+              <div class="annotation-row">
+                <div class="row-label">Desicion</div>
+                <div class="rating-group">
+                  <input type="radio" id="dec-reject" name="desicion" value="Reject"><label for="dec-reject">Reject</label>
+                  <input type="radio" id="dec-revise" name="desicion" value="Revise" checked><label for="dec-revise">Revise</label>
+                  <input type="radio" id="dec-accept" name="desicion" value="Accept"><label for="dec-accept">Accept</label>
+                </div>
+              </div>
+            </div>
+
+            <div class="annotation-notes annotation-panel">
+              
+              <div>
+                <label>Reviewer Notes</label>
+                <textarea>
+The answer is broadly accurate and well grounded in the supporting sources. It correctly identifies enhanced due diligence, beneficial ownership verification, source-of-funds concerns, escalation to Compliance, and annual review expectations. However, the answer may slightly overstate “should not proceed” where the source language is closer to escalation before activation rather than an absolute prohibition in all cases. Consider tightening that sentence and clarifying whether source of wealth is mandatory in all high-risk cases or only where relevant to the identified risk.
+                </textarea>
+              </div>
+              <div class="annotation-actions">
+                <button class="btn">Save Draft</button>
+                <button class="btn primary">Submit Review</button>
+              </div>
+            </div>
+          </div>
+        </section>
+
+      </div>
+    </div>
+  </div>
+</body>
+</html>
