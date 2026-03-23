@@ -323,6 +323,11 @@ body {
   margin-bottom: 9px;
 }
 
+.source-card--highlight {
+  box-shadow: 0 0 0 1px #16528844, 0 0 0 3px #1652881a;
+  background: #f4f6ff;
+}
+
 .source-card h4 {
   margin: 0 0 4px;
   font-size: 0.86rem;
@@ -349,6 +354,16 @@ body {
   border: 1px solid var(--border);
   border-radius: 8px;
   padding: 7px 8px;
+}
+
+/* Inline evidence links used in key points */
+.evidence-ref-link {
+  text-decoration: none;
+  cursor: pointer;
+}
+
+.evidence-ref-link:hover {
+  text-decoration: underline;
 }
 
 /* ── Annotation rows & rating groups ── */
